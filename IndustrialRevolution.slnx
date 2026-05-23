@@ -1,0 +1,9 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="IndustrialRevolution.csproj" Id="c1162b1b-dfb2-4e99-a8d3-406ca695c1c7">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+</Solution>
