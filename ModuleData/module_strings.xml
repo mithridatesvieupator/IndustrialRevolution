@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns="http://schemas.taleWorlds.com/localization">
+  <strings>
+
+    <!-- ===== GiveTroops ===== -->
+    <string id="GTNMOD01T" text="I have recruited and trained fine warriors. I could gift some to you, to defend this settlement and protect your interests. What say you?" />
+    <string id="GTNMOD02T" text="Of course, that could help us a lot here." />
+    <string id="GTNMOD03T" text="This text should be under the party screen." />
+    <string id="GTNMOD04T" text="Thank you." />
+
+    <!-- ===== SellTroops ===== -->
+    <string id="IR_SELL_TROOPS" text="Sell troops" />
+    <string id="IR_SELL_TROOPS_SCREEN" text="Sell Troops" />
+    <string id="IR_SELL_TROOPS_MSG" text="You have sold your troops for {GOLD} gold." />
+
+    <!-- ===== SellPrisoners ===== -->
+    <string id="IR_SELL_ALL_PRISONERS" text="Sell all prisoners" />
+    <string id="IR_SELL_SOME_PRISONERS" text="Sell some prisoners" />
+    <string id="IR_SELL_PRISONERS_SCREEN" text="Sell Prisoners" />
+    <string id="IR_PRISONERS_SOLD_MSG" text="You sold {COUNT} prisoners for {GOLD} gold." />
+    <string id="IR_SELL_PRICE_HINT" text="Total: {GOLD} gold" />
+
+    <!-- ===== Philanthropist — menus ===== -->
+    <string id="IR_DONATE_TOWN" text="Donate to townsfolk" />
+    <string id="IR_DONATE_VILLAGE" text="Donate to villagers" />
+    <string id="IR_DONATE_CASTLE" text="Donate to castle" />
+    <string id="IR_REBUILD_VILLAGE_OPTION" text="Help rebuild {VILLAGE_NAME}" />
+    <string id="IR_REBUILD_WAIT_TEXT" text="You are helping to rebuild the village." />
+    <string id="IR_END_REBUILDING" text="End Rebuilding" />
+
+    <!-- ===== Philanthropist — dialogs ===== -->
+    <string id="IR_FINANCIAL_ASK" text="I am in need of funds. Given our good standing, could you provide some financial backing?" />
+    <string id="IR_FINANCIAL_AGREE" text="Of course. You've been a good friend to us. Here is what we can spare." />
+
+    <!-- ===== Philanthropist — UI strings ===== -->
+    <string id="IR_DONATION_TITLE" text="Donation" />
+    <string id="IR_DONATION_PROMPT" text="How much gold would you like to donate to the people?&#10;(You can type 'max' to donate the maximum possible amount based on your purse and the settlement limit)." />
+    <string id="IR_DONATE_BTN" text="Donate" />
+    <string id="IR_CANCEL_BTN" text="Cancel" />
+    <string id="IR_DONATE_CAP_TITLE" text="Thank you" />
+    <string id="IR_DONATE_CAP_TEXT" text="The settlement has already reached its maximum capacity for your donations." />
+    <string id="IR_LEAVE_BTN" text="Leave" />
+
+    <!-- ===== Philanthropist — info messages ===== -->
+    <string id="IR_FINANCIAL_MSG" text="You received {GOLD} gold. Your relation with {NAME} decreased by {COST}." />
+    <string id="IR_DONATE_VILLAGE_MSG" text="You donated {GOLD} gold and increased {NAME}'s hearths by {AMOUNT}." />
+    <string id="IR_DONATE_TOWN_MSG" text="You donated {GOLD} gold and increased {NAME}'s prosperity by {AMOUNT}." />
+    <string id="IR_REBUILD_MSG" text="You helped rebuild {NAME}. Relations with local notables increased by +50." />
+
+    <!-- ===== Economy / Construction tooltip labels ===== -->
+    <string id="IR_MOD_NAME" text="Industrial Revolution" />
+    <string id="IR_GOLD_RESERVE_BOOST" text="Gold Reserve Boost" />
+
+  </strings>
+</base>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="Deutsch" />
+  </tags>
+  <strings>
+    <string id="GTNMOD01T" text="Ich habe ausgezeichnete Krieger rekrutiert und ausgebildet. Ich könnte Ihnen einige schenken, um diese Siedlung zu verteidigen und Ihre Interessen zu schützen. Was halten Sie davon?" />
+    <string id="GTNMOD02T" text="Natürlich, das würde uns hier sehr helfen." />
+    <string id="GTNMOD03T" text="Dieser Text sollte unterhalb des Truppenbildschirms erscheinen." />
+    <string id="GTNMOD04T" text="Danke." />
+
+    <string id="IR_SELL_TROOPS" text="Soldaten verkaufen" />
+    <string id="IR_SELL_TROOPS_SCREEN" text="Soldaten Verkaufen" />
+    <string id="IR_SELL_TROOPS_MSG" text="Sie haben Ihre Soldaten für {GOLD} Gold verkauft." />
+
+    <string id="IR_SELL_ALL_PRISONERS" text="Alle Gefangenen verkaufen" />
+    <string id="IR_SELL_SOME_PRISONERS" text="Einige Gefangene verkaufen" />
+    <string id="IR_SELL_PRISONERS_SCREEN" text="Gefangene Verkaufen" />
+    <string id="IR_PRISONERS_SOLD_MSG" text="Sie haben {COUNT} Gefangene für {GOLD} Gold verkauft." />
+    <string id="IR_SELL_PRICE_HINT" text="Gesamt: {GOLD} Gold" />
+
+    <string id="IR_DONATE_TOWN" text="An Stadtbewohner spenden" />
+    <string id="IR_DONATE_VILLAGE" text="An Dorfbewohner spenden" />
+    <string id="IR_DONATE_CASTLE" text="An die Burg spenden" />
+    <string id="IR_REBUILD_VILLAGE_OPTION" text="Beim Wiederaufbau von {VILLAGE_NAME} helfen" />
+    <string id="IR_REBUILD_WAIT_TEXT" text="Sie helfen beim Wiederaufbau des Dorfes." />
+    <string id="IR_END_REBUILDING" text="Wiederaufbau beenden" />
+    <string id="IR_FINANCIAL_ASK" text="Ich benötige Mittel. Angesichts unserer guten Beziehung, könnten Sie mir etwas finanzielle Unterstützung gewähren?" />
+    <string id="IR_FINANCIAL_AGREE" text="Natürlich. Sie waren uns ein guter Freund. Hier ist, was wir geben können." />
+
+    <string id="IR_DONATION_TITLE" text="Spende" />
+    <string id="IR_DONATION_PROMPT" text="Wie viel Gold möchten Sie dem Volk spenden?&#10;(Geben Sie &apos;max&apos; ein, um den maximalen Betrag zu spenden, den Ihr Beutel und das Siedlungslimit erlauben.)" />
+    <string id="IR_DONATE_BTN" text="Spenden" />
+    <string id="IR_CANCEL_BTN" text="Abbrechen" />
+    <string id="IR_DONATE_CAP_TITLE" text="Danke" />
+    <string id="IR_DONATE_CAP_TEXT" text="Die Siedlung hat bereits ihre maximale Kapazität für Ihre Spenden erreicht." />
+    <string id="IR_LEAVE_BTN" text="Verlassen" />
+
+    <string id="IR_FINANCIAL_MSG" text="Sie haben {GOLD} Gold erhalten. Ihre Beziehung zu {NAME} sank um {COST}." />
+    <string id="IR_DONATE_VILLAGE_MSG" text="Sie haben {GOLD} Gold gespendet und die Herde in {NAME} um {AMOUNT} erhöht." />
+    <string id="IR_DONATE_TOWN_MSG" text="Sie haben {GOLD} Gold gespendet und den Wohlstand von {NAME} um {AMOUNT} erhöht." />
+    <string id="IR_REBUILD_MSG" text="Sie haben beim Wiederaufbau von {NAME} geholfen. Die Beziehungen zu lokalen Notabeln stiegen um +50." />
+
+    <string id="IR_MOD_NAME" text="Industrielle Revolution" />
+    <string id="IR_GOLD_RESERVE_BOOST" text="Goldreserven-Boost" />
+  </strings>
+</base>

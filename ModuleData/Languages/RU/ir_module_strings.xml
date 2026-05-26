@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="Русский" />
+  </tags>
+  <strings>
+    <string id="GTNMOD01T" text="Я набрал и обучил отличных воинов. Я могу подарить вам некоторых из них, чтобы защитить это поселение и ваши интересы. Что скажете?" />
+    <string id="GTNMOD02T" text="Конечно, это очень поможет нам здесь." />
+    <string id="GTNMOD03T" text="Этот текст должен появляться под экраном отрядов." />
+    <string id="GTNMOD04T" text="Спасибо." />
+
+    <string id="IR_SELL_TROOPS" text="Продать солдат" />
+    <string id="IR_SELL_TROOPS_SCREEN" text="Продать Солдат" />
+    <string id="IR_SELL_TROOPS_MSG" text="Вы продали своих солдат за {GOLD} золота." />
+
+    <string id="IR_SELL_ALL_PRISONERS" text="Продать всех заключённых" />
+    <string id="IR_SELL_SOME_PRISONERS" text="Продать некоторых заключённых" />
+    <string id="IR_SELL_PRISONERS_SCREEN" text="Продать Заключённых" />
+    <string id="IR_PRISONERS_SOLD_MSG" text="Вы продали {COUNT} заключённых за {GOLD} золота." />
+    <string id="IR_SELL_PRICE_HINT" text="Итого: {GOLD} золота" />
+
+    <string id="IR_DONATE_TOWN" text="Пожертвовать горожанам" />
+    <string id="IR_DONATE_VILLAGE" text="Пожертвовать жителям деревни" />
+    <string id="IR_DONATE_CASTLE" text="Пожертвовать замку" />
+    <string id="IR_REBUILD_VILLAGE_OPTION" text="Помочь восстановить {VILLAGE_NAME}" />
+    <string id="IR_REBUILD_WAIT_TEXT" text="Вы помогаете восстанавливать деревню." />
+    <string id="IR_END_REBUILDING" text="Завершить восстановление" />
+    <string id="IR_FINANCIAL_ASK" text="Мне нужны средства. Учитывая наши хорошие отношения, не могли бы вы оказать мне финансовую поддержку?" />
+    <string id="IR_FINANCIAL_AGREE" text="Конечно. Вы были нашим добрым другом. Вот что мы можем дать." />
+
+    <string id="IR_DONATION_TITLE" text="Пожертвование" />
+    <string id="IR_DONATION_PROMPT" text="Сколько золота вы хотите пожертвовать людям?&#10;(Введите &apos;max&apos;, чтобы пожертвовать максимальную сумму, которую позволяет ваш кошелёк и ограничение поселения.)" />
+    <string id="IR_DONATE_BTN" text="Пожертвовать" />
+    <string id="IR_CANCEL_BTN" text="Отмена" />
+    <string id="IR_DONATE_CAP_TITLE" text="Спасибо" />
+    <string id="IR_DONATE_CAP_TEXT" text="Поселение уже достигло максимальной вместимости для ваших пожертвований." />
+    <string id="IR_LEAVE_BTN" text="Уйти" />
+
+    <string id="IR_FINANCIAL_MSG" text="Вы получили {GOLD} золота. Ваши отношения с {NAME} снизились на {COST}." />
+    <string id="IR_DONATE_VILLAGE_MSG" text="Вы пожертвовали {GOLD} золота и увеличили количество домов в {NAME} на {AMOUNT}." />
+    <string id="IR_DONATE_TOWN_MSG" text="Вы пожертвовали {GOLD} золота и повысили благосостояние {NAME} на {AMOUNT}." />
+    <string id="IR_REBUILD_MSG" text="Вы помогли восстановить {NAME}. Отношения с местными знатными людьми выросли на +50." />
+
+    <string id="IR_MOD_NAME" text="Промышленная революция" />
+    <string id="IR_GOLD_RESERVE_BOOST" text="Усиление золотого резерва" />
+  </strings>
+</base>

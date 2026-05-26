@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="日本語" />
+  </tags>
+  <strings>
+    <string id="GTNMOD01T" text="優秀な戦士を募集し、訓練しました。この集落を守り、あなたの利益を守るために、何人か贈ることができます。いかがでしょうか？" />
+    <string id="GTNMOD02T" text="もちろん、それはここで大いに助かります。" />
+    <string id="GTNMOD03T" text="このテキストはトループ画面の下に表示されるはずです。" />
+    <string id="GTNMOD04T" text="ありがとう。" />
+
+    <string id="IR_SELL_TROOPS" text="兵士を売る" />
+    <string id="IR_SELL_TROOPS_SCREEN" text="兵士を売る" />
+    <string id="IR_SELL_TROOPS_MSG" text="兵士を {GOLD} ゴールドで売りました。" />
+
+    <string id="IR_SELL_ALL_PRISONERS" text="全囚人を売る" />
+    <string id="IR_SELL_SOME_PRISONERS" text="一部の囚人を売る" />
+    <string id="IR_SELL_PRISONERS_SCREEN" text="囚人を売る" />
+    <string id="IR_PRISONERS_SOLD_MSG" text="{COUNT} 人の囚人を {GOLD} ゴールドで売りました。" />
+    <string id="IR_SELL_PRICE_HINT" text="合計：{GOLD} ゴールド" />
+
+    <string id="IR_DONATE_TOWN" text="町民に寄付する" />
+    <string id="IR_DONATE_VILLAGE" text="村人に寄付する" />
+    <string id="IR_DONATE_CASTLE" text="城に寄付する" />
+    <string id="IR_REBUILD_VILLAGE_OPTION" text="{VILLAGE_NAME} の再建を支援する" />
+    <string id="IR_REBUILD_WAIT_TEXT" text="村の再建を支援しています。" />
+    <string id="IR_END_REBUILDING" text="再建を終了する" />
+    <string id="IR_FINANCIAL_ASK" text="資金が必要です。良好な関係を考慮して、財政的な支援をしていただけませんか？" />
+    <string id="IR_FINANCIAL_AGREE" text="もちろんです。あなたは私たちの良き友人でした。これが私たちが提供できるものです。" />
+
+    <string id="IR_DONATION_TITLE" text="寄付" />
+    <string id="IR_DONATION_PROMPT" text="人々にいくらゴールドを寄付しますか？&#10;(&apos;max&apos; と入力すると、財布と集落の上限に応じた最大額を寄付できます。)" />
+    <string id="IR_DONATE_BTN" text="寄付する" />
+    <string id="IR_CANCEL_BTN" text="キャンセル" />
+    <string id="IR_DONATE_CAP_TITLE" text="ありがとう" />
+    <string id="IR_DONATE_CAP_TEXT" text="この集落はすでに寄付の最大容量に達しています。" />
+    <string id="IR_LEAVE_BTN" text="去る" />
+
+    <string id="IR_FINANCIAL_MSG" text="{GOLD} ゴールドを受け取りました。{NAME} との関係が {COST} 低下しました。" />
+    <string id="IR_DONATE_VILLAGE_MSG" text="{GOLD} ゴールドを寄付し、{NAME} のかまど数を {AMOUNT} 増やしました。" />
+    <string id="IR_DONATE_TOWN_MSG" text="{GOLD} ゴールドを寄付し、{NAME} の繁栄度を {AMOUNT} 上げました。" />
+    <string id="IR_REBUILD_MSG" text="{NAME} の再建を支援しました。地元の有力者との関係が +50 上昇しました。" />
+
+    <string id="IR_MOD_NAME" text="産業革命" />
+    <string id="IR_GOLD_RESERVE_BOOST" text="金準備ブースト" />
+  </strings>
+</base>

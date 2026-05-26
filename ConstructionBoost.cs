@@ -109,7 +109,7 @@ namespace IndustrialRevolution.Construction
 
             if (bonus > 0 && burn > 0 && town.BoostBuildingProcess > 0)
             {
-                result.Add((float)bonus, new TextObject("{=!}Gold Reserve Boost", null), null);
+                result.Add((float)bonus, new TextObject("{=IR_GOLD_RESERVE_BOOST}Gold Reserve Boost", null), null);
             }
             return result;
         }

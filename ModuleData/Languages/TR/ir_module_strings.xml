@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="Türkçe" />
+  </tags>
+  <strings>
+    <string id="GTNMOD01T" text="Harika savaşçılar topladım ve eğittim. Bu yerleşimi savunmak ve çıkarlarınızı korumak için bir kısmını size hediye edebilirim. Ne dersiniz?" />
+    <string id="GTNMOD02T" text="Elbette, bu burada bize çok yardımcı olur." />
+    <string id="GTNMOD03T" text="Bu metin birlik ekranının altında görünmelidir." />
+    <string id="GTNMOD04T" text="Teşekkürler." />
+
+    <string id="IR_SELL_TROOPS" text="Asker sat" />
+    <string id="IR_SELL_TROOPS_SCREEN" text="Asker Sat" />
+    <string id="IR_SELL_TROOPS_MSG" text="Askerlerinizi {GOLD} altına sattınız." />
+
+    <string id="IR_SELL_ALL_PRISONERS" text="Tüm esirleri sat" />
+    <string id="IR_SELL_SOME_PRISONERS" text="Bazı esirleri sat" />
+    <string id="IR_SELL_PRISONERS_SCREEN" text="Esir Sat" />
+    <string id="IR_PRISONERS_SOLD_MSG" text="{COUNT} esiri {GOLD} altına sattınız." />
+    <string id="IR_SELL_PRICE_HINT" text="Toplam: {GOLD} altın" />
+
+    <string id="IR_DONATE_TOWN" text="Kasaba halkına bağış yap" />
+    <string id="IR_DONATE_VILLAGE" text="Köylülere bağış yap" />
+    <string id="IR_DONATE_CASTLE" text="Kaleye bağış yap" />
+    <string id="IR_REBUILD_VILLAGE_OPTION" text="{VILLAGE_NAME} köyünü yeniden inşa etmeye yardım et" />
+    <string id="IR_REBUILD_WAIT_TEXT" text="Köyü yeniden inşa etmeye yardım ediyorsunuz." />
+    <string id="IR_END_REBUILDING" text="İnşaatı Bitir" />
+    <string id="IR_FINANCIAL_ASK" text="Paraya ihtiyacım var. İyi ilişkilerimiz göz önünde bulundurulduğunda, biraz mali destek sağlayabilir misiniz?" />
+    <string id="IR_FINANCIAL_AGREE" text="Elbette. Bizim için iyi bir dost oldunuz. İşte elimizden gelenler." />
+
+    <string id="IR_DONATION_TITLE" text="Bağış" />
+    <string id="IR_DONATION_PROMPT" text="Halka ne kadar altın bağışlamak istersiniz?&#10;(&apos;max&apos; yazarak kesenizin ve yerleşim sınırının izin verdiği maksimum miktarı bağışlayabilirsiniz.)" />
+    <string id="IR_DONATE_BTN" text="Bağışla" />
+    <string id="IR_CANCEL_BTN" text="İptal" />
+    <string id="IR_DONATE_CAP_TITLE" text="Teşekkürler" />
+    <string id="IR_DONATE_CAP_TEXT" text="Yerleşim, bağışlarınız için maksimum kapasiteye ulaşmış." />
+    <string id="IR_LEAVE_BTN" text="Ayrıl" />
+
+    <string id="IR_FINANCIAL_MSG" text="{GOLD} altın aldınız. {NAME} ile ilişkiniz {COST} azaldı." />
+    <string id="IR_DONATE_VILLAGE_MSG" text="{GOLD} altın bağışladınız ve {NAME} köyünün ocak sayısını {AMOUNT} artırdınız." />
+    <string id="IR_DONATE_TOWN_MSG" text="{GOLD} altın bağışladınız ve {NAME} bölgesinin refahını {AMOUNT} artırdınız." />
+    <string id="IR_REBUILD_MSG" text="{NAME} köyünü yeniden inşa etmeye yardım ettiniz. Yerel ileri gelenlerle ilişkiniz +50 arttı." />
+
+    <string id="IR_MOD_NAME" text="Sanayi Devrimi" />
+    <string id="IR_GOLD_RESERVE_BOOST" text="Altın Rezervi Takviyesi" />
+  </strings>
+</base>

@@ -24,17 +24,17 @@ namespace IndustrialRevolution.Philanthropist
 
         private void OnSessionLaunched(CampaignGameStarter starter)
         {
-            starter.AddGameMenuOption("town", "settlement_donation", "Donate to townsfolk", new GameMenuOption.OnConditionDelegate(this.settlement_donation_on_condition), new GameMenuOption.OnConsequenceDelegate(this.settlement_donation_on_consequence), false, -1, false, null);
-            starter.AddGameMenuOption("village", "settlement_donation", "Donate to villagers", new GameMenuOption.OnConditionDelegate(this.settlement_donation_on_condition), new GameMenuOption.OnConsequenceDelegate(this.settlement_donation_on_consequence), false, -1, false, null);
-            starter.AddGameMenuOption("castle", "settlement_donation", "Donate to castle", new GameMenuOption.OnConditionDelegate(this.settlement_donation_on_condition), new GameMenuOption.OnConsequenceDelegate(this.settlement_donation_on_consequence), false, -1, false, null);
+            starter.AddGameMenuOption("town", "settlement_donation", "{=IR_DONATE_TOWN}Donate to townsfolk", new GameMenuOption.OnConditionDelegate(this.settlement_donation_on_condition), new GameMenuOption.OnConsequenceDelegate(this.settlement_donation_on_consequence), false, -1, false, null);
+            starter.AddGameMenuOption("village", "settlement_donation", "{=IR_DONATE_VILLAGE}Donate to villagers", new GameMenuOption.OnConditionDelegate(this.settlement_donation_on_condition), new GameMenuOption.OnConsequenceDelegate(this.settlement_donation_on_consequence), false, -1, false, null);
+            starter.AddGameMenuOption("castle", "settlement_donation", "{=IR_DONATE_CASTLE}Donate to castle", new GameMenuOption.OnConditionDelegate(this.settlement_donation_on_condition), new GameMenuOption.OnConsequenceDelegate(this.settlement_donation_on_consequence), false, -1, false, null);
 
-            starter.AddGameMenuOption("village_looted", "rebuild_village", "Help rebuild {VILLAGE_NAME}", new GameMenuOption.OnConditionDelegate(this.rebuild_village_on_condition), new GameMenuOption.OnConsequenceDelegate(this.rebuild_village_on_consequence), false, -1, false, null);
-            starter.AddWaitGameMenu("rebuild_village", "You are helping to rebuild the village.", new OnInitDelegate(this.rebuild_village_on_init), new OnConditionDelegate(this.back_on_condition), new OnConsequenceDelegate(this.wait_menu_rebuild_village_on_consequence), new OnTickDelegate(this.wait_menu_rebuild_village_on_tick), GameMenu.MenuAndOptionType.WaitMenuShowOnlyProgressOption, GameMenu.MenuOverlayType.None, 0f, GameMenu.MenuFlags.None, null);
-            starter.AddGameMenuOption("rebuild_village", "rebuild_village_end", "End Rebuilding", new GameMenuOption.OnConditionDelegate(this.leave_on_condition), new GameMenuOption.OnConsequenceDelegate(this.wait_menu_end_rebuilding_on_consequence), true, -1, false, null);
+            starter.AddGameMenuOption("village_looted", "rebuild_village", "{=IR_REBUILD_VILLAGE_OPTION}Help rebuild {VILLAGE_NAME}", new GameMenuOption.OnConditionDelegate(this.rebuild_village_on_condition), new GameMenuOption.OnConsequenceDelegate(this.rebuild_village_on_consequence), false, -1, false, null);
+            starter.AddWaitGameMenu("rebuild_village", "{=IR_REBUILD_WAIT_TEXT}You are helping to rebuild the village.", new OnInitDelegate(this.rebuild_village_on_init), new OnConditionDelegate(this.back_on_condition), new OnConsequenceDelegate(this.wait_menu_rebuild_village_on_consequence), new OnTickDelegate(this.wait_menu_rebuild_village_on_tick), GameMenu.MenuAndOptionType.WaitMenuShowOnlyProgressOption, GameMenu.MenuOverlayType.None, 0f, GameMenu.MenuFlags.None, null);
+            starter.AddGameMenuOption("rebuild_village", "rebuild_village_end", "{=IR_END_REBUILDING}End Rebuilding", new GameMenuOption.OnConditionDelegate(this.leave_on_condition), new GameMenuOption.OnConsequenceDelegate(this.wait_menu_end_rebuilding_on_consequence), true, -1, false, null);
 
             // Financial Support Dialogue
-            starter.AddPlayerLine("indrev_financial_support", "hero_main_options", "indrev_financial_response", "{=!}I am in need of funds. Given our good standing, could you provide some financial backing?", new ConversationSentence.OnConditionDelegate(this.ConditionToAskForSupport), null, 40, null, null);
-            starter.AddDialogLine("indrev_financial_agree", "indrev_financial_response", "hero_main_options", "{=!}Of course. You've been a good friend to us. Here is what we can spare.", null, new ConversationSentence.OnConsequenceDelegate(this.ConsequenceForSupportAgree), 100, null);
+            starter.AddPlayerLine("indrev_financial_support", "hero_main_options", "indrev_financial_response", "{=IR_FINANCIAL_ASK}I am in need of funds. Given our good standing, could you provide some financial backing?", new ConversationSentence.OnConditionDelegate(this.ConditionToAskForSupport), null, 40, null, null);
+            starter.AddDialogLine("indrev_financial_agree", "indrev_financial_response", "hero_main_options", "{=IR_FINANCIAL_AGREE}Of course. You've been a good friend to us. Here is what we can spare.", null, new ConversationSentence.OnConsequenceDelegate(this.ConsequenceForSupportAgree), 100, null);
         }
 
         // --- FINANCIAL SUPPORT LOGIC ---
@@ -54,7 +54,11 @@ namespace IndustrialRevolution.Philanthropist
             ChangeRelationAction.ApplyPlayerRelation(notable, -relationCost, true, true);
             Hero.MainHero.ChangeHeroGold(goldReward);
 
-            InformationManager.DisplayMessage(new InformationMessage($"You received {goldReward} gold. Your relation with {notable.Name} decreased by {relationCost}."));
+            var financialMsg = new TextObject("{=IR_FINANCIAL_MSG}You received {GOLD} gold. Your relation with {NAME} decreased by {COST}.");
+            financialMsg.SetTextVariable("GOLD", goldReward);
+            financialMsg.SetTextVariable("NAME", notable.Name);
+            financialMsg.SetTextVariable("COST", relationCost);
+            InformationManager.DisplayMessage(new InformationMessage(financialMsg.ToString()));
         }
 
         // --- DONATION LOGIC ---
@@ -68,7 +72,7 @@ namespace IndustrialRevolution.Philanthropist
         private void settlement_donation_on_consequence(MenuCallbackArgs args)
         {
             Settlement settlement = Settlement.CurrentSettlement;
-            string donationText = "How much gold would you like to donate to the people?\n(You can type 'max' to donate the maximum possible amount based on your purse and the settlement limit).";
+            string donationText = new TextObject("{=IR_DONATION_PROMPT}How much gold would you like to donate to the people?\n(You can type 'max' to donate the maximum possible amount based on your purse and the settlement limit).").ToString();
 
             bool canDonate = false;
             if (settlement.IsTown && settlement.Town.Prosperity < this._settings.DonateTownProsperityMax) canDonate = true;
@@ -77,12 +81,22 @@ namespace IndustrialRevolution.Philanthropist
 
             if (canDonate)
             {
-                TextInquiryData data = new TextInquiryData("Donation", donationText, true, true, "Donate", "Cancel", new Action<string>(this.OnDonateToSettlement), null, false, new Func<string, Tuple<bool, string>>(this.IsDonationTextValid), "", "");
+                TextInquiryData data = new TextInquiryData(
+                    new TextObject("{=IR_DONATION_TITLE}Donation").ToString(),
+                    donationText, true, true,
+                    new TextObject("{=IR_DONATE_BTN}Donate").ToString(),
+                    new TextObject("{=IR_CANCEL_BTN}Cancel").ToString(),
+                    new Action<string>(this.OnDonateToSettlement), null, false, new Func<string, Tuple<bool, string>>(this.IsDonationTextValid), "", "");
                 InformationManager.ShowTextInquiry(data, false, false);
             }
             else
             {
-                InformationManager.ShowInquiry(new InquiryData("Thank you", "The settlement has already reached its maximum capacity for your donations.", true, false, "Leave", string.Empty, null, null, "", 0f, null, null, null), false, false);
+                InformationManager.ShowInquiry(new InquiryData(
+                    new TextObject("{=IR_DONATE_CAP_TITLE}Thank you").ToString(),
+                    new TextObject("{=IR_DONATE_CAP_TEXT}The settlement has already reached its maximum capacity for your donations.").ToString(),
+                    true, false,
+                    new TextObject("{=IR_LEAVE_BTN}Leave").ToString(),
+                    string.Empty, null, null, "", 0f, null, null, null), false, false);
             }
         }
 
@@ -108,8 +122,13 @@ namespace IndustrialRevolution.Philanthropist
             this.IncreaseSettlementProsperityOrHearth(settlement, increaseAmount);
             Hero.MainHero.ChangeHeroGold(-donationAmount);
 
-            string statName = settlement.IsVillage ? "hearths" : "prosperity";
-            InformationManager.DisplayMessage(new InformationMessage($"You donated {donationAmount} gold and increased {settlement.Name}'s {statName} by {increaseAmount:F1}."));
+            var donateMsg = settlement.IsVillage
+                ? new TextObject("{=IR_DONATE_VILLAGE_MSG}You donated {GOLD} gold and increased {NAME}'s hearths by {AMOUNT}.")
+                : new TextObject("{=IR_DONATE_TOWN_MSG}You donated {GOLD} gold and increased {NAME}'s prosperity by {AMOUNT}.");
+            donateMsg.SetTextVariable("GOLD", donationAmount);
+            donateMsg.SetTextVariable("NAME", settlement.Name);
+            donateMsg.SetTextVariable("AMOUNT", new TextObject(increaseAmount.ToString("F1")));
+            InformationManager.DisplayMessage(new InformationMessage(donateMsg.ToString()));
 
             int relationBoost = (int)(increaseAmount / (float)this._settings.ProsperityToRelationsRatio);
 
@@ -200,7 +219,9 @@ namespace IndustrialRevolution.Philanthropist
                 {
                     ChangeRelationAction.ApplyPlayerRelation(notable, 50, true, true);
                 }
-                InformationManager.DisplayMessage(new InformationMessage($"You helped rebuild {settlement.Name}. Relations with local notables increased by +50."));
+                var rebuildMsg = new TextObject("{=IR_REBUILD_MSG}You helped rebuild {NAME}. Relations with local notables increased by +50.");
+                rebuildMsg.SetTextVariable("NAME", settlement.Name);
+                InformationManager.DisplayMessage(new InformationMessage(rebuildMsg.ToString()));
             }
             GameMenu.SwitchToMenu("village");
         }

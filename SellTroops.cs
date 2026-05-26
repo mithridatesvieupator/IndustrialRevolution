@@ -22,8 +22,8 @@ namespace IndustrialRevolution.SellTroops
 
         private void OnSessionLaunched(CampaignGameStarter starter)
         {
-            starter.AddGameMenuOption("town", "sell_troops", "Sell troops", new GameMenuOption.OnConditionDelegate(this.sell_soldiers_condition), new GameMenuOption.OnConsequenceDelegate(this.sell_soldiers_consequence), false, -1, false, null);
-            starter.AddGameMenuOption("village", "sell_troops", "Sell troops", new GameMenuOption.OnConditionDelegate(this.sell_soldiers_condition), new GameMenuOption.OnConsequenceDelegate(this.sell_soldiers_consequence), false, -1, false, null);
+            starter.AddGameMenuOption("town", "sell_troops", "{=IR_SELL_TROOPS}Sell troops", new GameMenuOption.OnConditionDelegate(this.sell_soldiers_condition), new GameMenuOption.OnConsequenceDelegate(this.sell_soldiers_consequence), false, -1, false, null);
+            starter.AddGameMenuOption("village", "sell_troops", "{=IR_SELL_TROOPS}Sell troops", new GameMenuOption.OnConditionDelegate(this.sell_soldiers_condition), new GameMenuOption.OnConsequenceDelegate(this.sell_soldiers_consequence), false, -1, false, null);
         }
 
         private bool sell_soldiers_condition(MenuCallbackArgs args)
@@ -46,7 +46,7 @@ namespace IndustrialRevolution.SellTroops
                 null,
                 PartyScreenLogic.TransferState.Transferable,
                 PartyScreenLogic.TransferState.NotTransferable,
-                new TextObject("{=!}Sell Troops"),
+                new TextObject("{=IR_SELL_TROOPS_SCREEN}Sell Troops"),
                 100000,
                 false,
                 false,
@@ -63,7 +63,14 @@ namespace IndustrialRevolution.SellTroops
 
         private Tuple<bool, TextObject> DoneButtonCondition(TroopRoster leftMemberRoster, TroopRoster leftPrisonRoster, TroopRoster rightMemberRoster, TroopRoster rightPrisonRoster, int leftLimitNum, int rightLimitNum)
         {
-            return new Tuple<bool, TextObject>(true, TextObject.GetEmpty());
+            int totalBaseValue = 0;
+            foreach (TroopRosterElement element in leftMemberRoster.GetTroopRoster())
+                totalBaseValue += this.GetSoldierPrice(element.Character) * element.Number;
+            float finalGoldF = (float)totalBaseValue * Settings.Instance.SoldierSellingPriceMultiplier;
+            int finalGold = (int)Math.Max(0f, finalGoldF);
+            var hint = new TextObject("{=IR_SELL_PRICE_HINT}Total: {GOLD} gold");
+            hint.SetTextVariable("GOLD", finalGold);
+            return new Tuple<bool, TextObject>(true, hint);
         }
 
         private bool DoneClicked(TroopRoster leftMemberRoster, TroopRoster leftPrisonRoster, TroopRoster rightMemberRoster, TroopRoster rightPrisonRoster, FlattenedTroopRoster takenPrisonerRoster, FlattenedTroopRoster releasedPrisonerRoster, bool isForced, PartyBase leftParty, PartyBase rightParty)
@@ -81,7 +88,9 @@ namespace IndustrialRevolution.SellTroops
                 int finalGold = (int)Math.Max(1f, finalGoldF);
 
                 Hero.MainHero.ChangeHeroGold(finalGold);
-                InformationManager.DisplayMessage(new InformationMessage($"You have sold your troops for {finalGold} gold."));
+                var msg = new TextObject("{=IR_SELL_TROOPS_MSG}You have sold your troops for {GOLD} gold.");
+                msg.SetTextVariable("GOLD", finalGold);
+                InformationManager.DisplayMessage(new InformationMessage(msg.ToString()));
             }
 
             return true;

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="한국어" />
+  </tags>
+  <strings>
+    <string id="GTNMOD01T" text="뛰어난 전사들을 모집하고 훈련시켰습니다. 이 정착지를 방어하고 당신의 이익을 보호하기 위해 몇 명을 선물로 드릴 수 있습니다. 어떻게 생각하십니까?" />
+    <string id="GTNMOD02T" text="물론이죠, 그것은 여기서 우리에게 큰 도움이 될 것입니다." />
+    <string id="GTNMOD03T" text="이 텍스트는 병력 화면 아래에 표시되어야 합니다." />
+    <string id="GTNMOD04T" text="감사합니다." />
+
+    <string id="IR_SELL_TROOPS" text="병사 판매" />
+    <string id="IR_SELL_TROOPS_SCREEN" text="병사 판매" />
+    <string id="IR_SELL_TROOPS_MSG" text="{GOLD} 골드에 병사를 판매했습니다." />
+
+    <string id="IR_SELL_ALL_PRISONERS" text="모든 포로 판매" />
+    <string id="IR_SELL_SOME_PRISONERS" text="일부 포로 판매" />
+    <string id="IR_SELL_PRISONERS_SCREEN" text="포로 판매" />
+    <string id="IR_PRISONERS_SOLD_MSG" text="{COUNT}명의 포로를 {GOLD} 골드에 판매했습니다." />
+    <string id="IR_SELL_PRICE_HINT" text="합계: {GOLD} 골드" />
+
+    <string id="IR_DONATE_TOWN" text="주민에게 기부" />
+    <string id="IR_DONATE_VILLAGE" text="마을 주민에게 기부" />
+    <string id="IR_DONATE_CASTLE" text="성에 기부" />
+    <string id="IR_REBUILD_VILLAGE_OPTION" text="{VILLAGE_NAME} 재건 지원" />
+    <string id="IR_REBUILD_WAIT_TEXT" text="마을 재건을 돕고 있습니다." />
+    <string id="IR_END_REBUILDING" text="재건 종료" />
+    <string id="IR_FINANCIAL_ASK" text="자금이 필요합니다. 우리의 좋은 관계를 고려하여, 재정적 지원을 제공해 주실 수 있습니까?" />
+    <string id="IR_FINANCIAL_AGREE" text="물론입니다. 당신은 우리에게 좋은 친구였습니다. 이것이 우리가 드릴 수 있는 것입니다." />
+
+    <string id="IR_DONATION_TITLE" text="기부" />
+    <string id="IR_DONATION_PROMPT" text="주민들에게 얼마의 골드를 기부하시겠습니까?&#10;(&apos;max&apos;를 입력하면 지갑과 정착지 한도에 따른 최대 금액을 기부할 수 있습니다.)" />
+    <string id="IR_DONATE_BTN" text="기부" />
+    <string id="IR_CANCEL_BTN" text="취소" />
+    <string id="IR_DONATE_CAP_TITLE" text="감사합니다" />
+    <string id="IR_DONATE_CAP_TEXT" text="이 정착지는 이미 기부 최대 용량에 도달했습니다." />
+    <string id="IR_LEAVE_BTN" text="떠나다" />
+
+    <string id="IR_FINANCIAL_MSG" text="{GOLD} 골드를 받았습니다. {NAME}과의 관계가 {COST} 감소했습니다." />
+    <string id="IR_DONATE_VILLAGE_MSG" text="{GOLD} 골드를 기부하여 {NAME}의 가구 수를 {AMOUNT} 늘렸습니다." />
+    <string id="IR_DONATE_TOWN_MSG" text="{GOLD} 골드를 기부하여 {NAME}의 번영도를 {AMOUNT} 높였습니다." />
+    <string id="IR_REBUILD_MSG" text="{NAME}의 재건을 도왔습니다. 지역 유지들과의 관계가 +50 증가했습니다." />
+
+    <string id="IR_MOD_NAME" text="산업 혁명" />
+    <string id="IR_GOLD_RESERVE_BOOST" text="금 비축 증진" />
+  </strings>
+</base>

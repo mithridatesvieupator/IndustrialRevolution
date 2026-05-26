@@ -25,9 +25,9 @@ namespace IndustrialRevolution.Philanthropist
         [SettingPropertyGroup("Philanthropy")]
         public float DonateVillageProsperityMax { get; set; } = 5000f;
 
-        [SettingPropertyInteger("Gold To Prosperity Ratio", 1, 100, "0", HintText = "Gold required to increase prosperity/hearths by 1.", RequireRestart = false)]
+        [SettingPropertyInteger("Gold To Prosperity Ratio", 20, 200, "0", HintText = "Gold required to increase prosperity/hearths by 1.", RequireRestart = false)]
         [SettingPropertyGroup("Philanthropy")]
-        public int GoldToProsperityRatio { get; set; } = 50;
+        public int GoldToProsperityRatio { get; set; } = 100;
 
         [SettingPropertyInteger("Prosperity To Relations Ratio", 10, 1000, "0", HintText = "Prosperity gain required to increase relations by 1.", RequireRestart = false)]
         [SettingPropertyGroup("Philanthropy")]

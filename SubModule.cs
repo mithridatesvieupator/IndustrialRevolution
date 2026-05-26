@@ -10,6 +10,7 @@ using IndustrialRevolution.GiveTroops;
 using IndustrialRevolution.Philanthropist;
 using IndustrialRevolution.Construction;
 using IndustrialRevolution.SellTroops;
+using IndustrialRevolution.SellPrisoners;
 
 namespace IndustrialRevolution
 {
@@ -49,6 +50,7 @@ namespace IndustrialRevolution
                 campaignStarter.AddBehavior(new ThePhilanthropistCampaignBehavior());
                 campaignStarter.AddBehavior(new ConstructionBoostBehavior());
                 campaignStarter.AddBehavior(new IndustrialRevolution.SellTroops.SellTroops());
+                campaignStarter.AddBehavior(new IndustrialRevolution.SellPrisoners.SellPrisoners());
                 campaignStarter.AddBehavior(new VillageConsumptionBehavior());
             }
         }

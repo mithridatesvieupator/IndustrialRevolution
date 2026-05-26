@@ -185,7 +185,7 @@ namespace IndustrialRevolution.Economy
 
                 if (num > 0.1f)
                 {
-                    __result.Add(num, new TextObject("{=!}Industrial Revolution", null), null);
+                    __result.Add(num, new TextObject("{=IR_MOD_NAME}Industrial Revolution", null), null);
                 }
             }
         }
@@ -201,7 +201,7 @@ namespace IndustrialRevolution.Economy
                 float num = Math.Max(0f, village.Hearth - 500f) / 50f * 0.15f;
                 if (num > 0f)
                 {
-                    __result.Add(num, new TextObject("{=!}Industrial Revolution", null), null);
+                    __result.Add(num, new TextObject("{=IR_MOD_NAME}Industrial Revolution", null), null);
                 }
             }
         }
@@ -218,7 +218,7 @@ namespace IndustrialRevolution.Economy
                 float num = (village.Bound.Town.Prosperity / 1000f) * Settings.Instance.HearthGrowthFromProsperityMultiplier;
                 if (num > 0.1f)
                 {
-                    __result.Add(num, new TextObject("{=!}Industrial Revolution", null), null);
+                    __result.Add(num, new TextObject("{=IR_MOD_NAME}Industrial Revolution", null), null);
                 }
             }
         }
@@ -236,7 +236,7 @@ namespace IndustrialRevolution.Economy
 
                 if (bonus != 0f)
                 {
-                    __result.Add(bonus, new TextObject("{=!}Industrial Revolution", null), null);
+                    __result.Add(bonus, new TextObject("{=IR_MOD_NAME}Industrial Revolution", null), null);
                 }
             }
         }

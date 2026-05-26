@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="简体中文" />
+  </tags>
+  <strings>
+    <string id="GTNMOD01T" text="我已招募并训练了一批精良的战士。我可以将其中一些赠予您，以保卫这处定居点并守护您的利益。您意下如何？" />
+    <string id="GTNMOD02T" text="当然，这对我们会有很大帮助。" />
+    <string id="GTNMOD03T" text="此文字应显示在队伍界面下方。" />
+    <string id="GTNMOD04T" text="谢谢。" />
+
+    <string id="IR_SELL_TROOPS" text="出售士兵" />
+    <string id="IR_SELL_TROOPS_SCREEN" text="出售士兵" />
+    <string id="IR_SELL_TROOPS_MSG" text="您已以 {GOLD} 金出售了您的士兵。" />
+
+    <string id="IR_SELL_ALL_PRISONERS" text="出售全部囚犯" />
+    <string id="IR_SELL_SOME_PRISONERS" text="出售部分囚犯" />
+    <string id="IR_SELL_PRISONERS_SCREEN" text="出售囚犯" />
+    <string id="IR_PRISONERS_SOLD_MSG" text="您已出售 {COUNT} 名囚犯，获得 {GOLD} 金。" />
+    <string id="IR_SELL_PRICE_HINT" text="合计：{GOLD} 金" />
+
+    <string id="IR_DONATE_TOWN" text="向镇民捐赠" />
+    <string id="IR_DONATE_VILLAGE" text="向村民捐赠" />
+    <string id="IR_DONATE_CASTLE" text="向城堡捐赠" />
+    <string id="IR_REBUILD_VILLAGE_OPTION" text="帮助重建 {VILLAGE_NAME}" />
+    <string id="IR_REBUILD_WAIT_TEXT" text="您正在帮助重建这座村庄。" />
+    <string id="IR_END_REBUILDING" text="停止重建" />
+    <string id="IR_FINANCIAL_ASK" text="我目前资金短缺。鉴于我们之间的良好关系，您能提供一些财务支持吗？" />
+    <string id="IR_FINANCIAL_AGREE" text="当然可以。您一直是我们的好朋友。这是我们能提供的资助。" />
+
+    <string id="IR_DONATION_TITLE" text="捐赠" />
+    <string id="IR_DONATION_PROMPT" text="您想向民众捐赠多少金币？&#10;（输入 &apos;max&apos; 可按您的钱包和定居点限制捐赠最大金额。）" />
+    <string id="IR_DONATE_BTN" text="捐赠" />
+    <string id="IR_CANCEL_BTN" text="取消" />
+    <string id="IR_DONATE_CAP_TITLE" text="感谢您" />
+    <string id="IR_DONATE_CAP_TEXT" text="该定居点已达到您捐赠的最大容量。" />
+    <string id="IR_LEAVE_BTN" text="离开" />
+
+    <string id="IR_FINANCIAL_MSG" text="您获得了 {GOLD} 金。您与 {NAME} 的关系降低了 {COST}。" />
+    <string id="IR_DONATE_VILLAGE_MSG" text="您捐赠了 {GOLD} 金，将 {NAME} 的炉灶数增加了 {AMOUNT}。" />
+    <string id="IR_DONATE_TOWN_MSG" text="您捐赠了 {GOLD} 金，将 {NAME} 的繁荣度提升了 {AMOUNT}。" />
+    <string id="IR_REBUILD_MSG" text="您帮助重建了 {NAME}。与当地名人的关系提升了 +50。" />
+
+    <string id="IR_MOD_NAME" text="工业革命" />
+    <string id="IR_GOLD_RESERVE_BOOST" text="金库建设加速" />
+  </strings>
+</base>
