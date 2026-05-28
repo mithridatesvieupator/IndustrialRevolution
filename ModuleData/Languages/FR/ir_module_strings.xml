@@ -43,5 +43,39 @@
 
     <string id="IR_MOD_NAME" text="Révolution Industrielle" />
     <string id="IR_GOLD_RESERVE_BOOST" text="Boost de Réserve d'Or" />
+
+    <string id="IR_MCM_GROUP_PHILANTHROPY" text="Philanthropie" />
+    <string id="IR_MCM_GROUP_TROOP_SELLING" text="Vente de Troupes" />
+    <string id="IR_MCM_GROUP_FINANCIAL" text="Soutien Financier" />
+    <string id="IR_MCM_GROUP_ECONOMY" text="Ajustements Économiques" />
+    <string id="IR_MCM_GROUP_DISCARD_XP" text="XP de Destruction" />
+
+    <string id="IR_MCM_DONATE_TOWN_MAX" text="Prospérité Ville Máx." />
+    <string id="IR_MCM_DONATE_CASTLE_MAX" text="Prospérité Château Máx." />
+    <string id="IR_MCM_DONATE_VILLAGE_MAX" text="Foyers Village Máx." />
+    <string id="IR_MCM_GOLD_PROSPERITY_RATIO" text="Ratio Or/Prospérité" />
+    <string id="IR_MCM_PROSPERITY_RELATIONS_RATIO" text="Ratio Prospérité/Relations" />
+    <string id="IR_MCM_PRICE_MULTIPLIER" text="Multiplicateur de Prix" />
+    <string id="IR_MCM_GOLD_PER_RELATION" text="Or par Point de Relation" />
+    <string id="IR_MCM_VILLAGE_PRICE_PREMIUM" text="Prime de Prix Village" />
+    <string id="IR_MCM_HEARTH_GROWTH" text="Multiplicateur Croissance Foyers" />
+    <string id="IR_MCM_VILLAGE_FOOD_BONUS" text="Bonus Nourriture Village" />
+    <string id="IR_MCM_DISCARD_XP_ALL" text="XP pour tous les objets selon valeur en or" />
+    <string id="IR_MCM_DISCARD_GOLD_PER_XP" text="Valeur Or par XP" />
+    <string id="IR_MCM_DISCARD_PERKS_DOUBLE" text="Compétences spéciales doublent l'XP" />
+
+    <string id="IR_MCM_DONATE_TOWN_MAX_HINT" text="Prospérité maximale de ville par donation." />
+    <string id="IR_MCM_DONATE_CASTLE_MAX_HINT" text="Prospérité maximale de château par donation." />
+    <string id="IR_MCM_DONATE_VILLAGE_MAX_HINT" text="Foyers maximaux de village par donation." />
+    <string id="IR_MCM_GOLD_PROSPERITY_RATIO_HINT" text="Or requis pour augmenter prospérité/foyers de 1." />
+    <string id="IR_MCM_PROSPERITY_RELATIONS_RATIO_HINT" text="Gain de prospérité requis pour augmenter les relations de 1." />
+    <string id="IR_MCM_PRICE_MULTIPLIER_HINT" text="Multiplie le prix de vente de base des troupes." />
+    <string id="IR_MCM_GOLD_PER_RELATION_HINT" text="Montant d'or reçu par 1 point de relation." />
+    <string id="IR_MCM_VILLAGE_PRICE_PREMIUM_HINT" text="Multiplicateur pour biens manufacturés et animaux de trait dans les villages." />
+    <string id="IR_MCM_HEARTH_GROWTH_HINT" text="Multiplicateur de croissance des foyers selon la prospérité de la ville liée." />
+    <string id="IR_MCM_VILLAGE_FOOD_BONUS_HINT" text="Multiplicateur du bonus de nourriture des villages vers les villes liées." />
+    <string id="IR_MCM_DISCARD_XP_ALL_HINT" text="Remplace le système de destruction natif." />
+    <string id="IR_MCM_DISCARD_GOLD_PER_XP_HINT" text="Valeur en or des objets donnés pour 1 XP." />
+    <string id="IR_MCM_DISCARD_PERKS_DOUBLE_HINT" text="Posséder ces compétences double l'XP obtenu." />
   </strings>
 </base>

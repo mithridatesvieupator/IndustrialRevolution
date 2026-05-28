@@ -4,6 +4,7 @@ using Helpers;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.Actions;
 using TaleWorlds.CampaignSystem.GameMenus;
+using TaleWorlds.CampaignSystem.GameState;
 using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.CampaignSystem.Roster;
 using TaleWorlds.Core;
@@ -87,21 +88,50 @@ namespace IndustrialRevolution.SellPrisoners
 
         private void sell_some_prisoners_consequence(MenuCallbackArgs args)
         {
-            PartyScreenHelper.OpenScreenWithCondition(
-                new IsTroopTransferableDelegate(this.IsPrisonerTransferable),
-                new PartyPresentationDoneButtonConditionDelegate(this.DoneButtonCondition),
+            // All the OpenScreenWithCondition overloads populate LeftMemberRoster /
+            // LeftPrisonerRoster but never touch RightMemberRoster / RightPrisonerRoster.
+            // Without an explicit RightPrisonerRoster the party screen never renders the
+            // prisoner section on the player's side.  The only way to set it is through
+            // PartyScreenLogicInitializationData, exactly as the native ransom broker does.
+            var initData = PartyScreenLogicInitializationData.CreateBasicInitDataWithMainParty(
+                TroopRoster.CreateDummyTroopRoster(),                         // leftMemberRoster  (sell list, starts empty)
+                TroopRoster.CreateDummyTroopRoster(),                         // leftPrisonerRoster (sell list, starts empty)
+                PartyScreenLogic.TransferState.NotTransferable,               // memberTransferState  — troops locked
+                PartyScreenLogic.TransferState.TransferableWithTrade,         // prisonerTransferState — gold ticker + visible
+                PartyScreenLogic.TransferState.NotTransferable,               // accompanyingTransferState
+                new IsTroopTransferableDelegate(this.IsPrisonerTransferable), // only prisoners movable
+                PartyScreenHelper.PartyScreenMode.Ransom,
+                null,                                                          // leftOwnerParty
+                new TextObject("{=IR_SELL_PRISONERS_SCREEN}Sell Prisoners"),  // leftPartyName (LHS panel header)
+                new TextObject("{=IR_SELL_PRISONERS_SCREEN}Sell Prisoners"),  // screen header (centre top)
+                null,                                                          // leftLeaderHero
+                0,                                                             // leftPartyMembersSizeLimit
+                0,                                                             // leftPartyPrisonersSizeLimit
                 new PartyPresentationDoneButtonDelegate(this.DoneClicked),
-                null,
-                PartyScreenLogic.TransferState.Transferable,
-                PartyScreenLogic.TransferState.NotTransferable,
-                new TextObject("{=IR_SELL_PRISONERS_SCREEN}Sell Prisoners"),
-                100000,
-                false,
-                true,
-                PartyScreenHelper.PartyScreenMode.TroopsManage,
-                null,
-                null
+                new PartyPresentationDoneButtonConditionDelegate(this.DoneButtonCondition),
+                null,   // cancelButtonDelegate
+                null,   // cancelButtonActivateDelegate
+                null,   // partyScreenClosedDelegate
+                false,  // isDismissMode
+                false,  // transferHealthiesGetWoundedsFirst
+                false,  // isTroopUpgradesDisabled
+                false,  // showProgressBar
+                0       // questModeWageDaysMultiplier
             );
+
+            // These two lines are the entire reason for using the low-level API.
+            initData.RightMemberRoster  = MobileParty.MainParty.MemberRoster.CloneRosterData();
+            initData.RightPrisonerRoster = MobileParty.MainParty.PrisonRoster.CloneRosterData();
+            initData.DoNotApplyGoldTransactions = true;
+
+            var partyState = Game.Current.GameStateManager.CreateState<PartyState>();
+            partyState.IsDonating = false;
+            partyState.PartyScreenMode = PartyScreenHelper.PartyScreenMode.Ransom;
+
+            var partyScreenLogic = new PartyScreenLogic();
+            partyScreenLogic.Initialize(initData);
+            partyState.PartyScreenLogic = partyScreenLogic;
+            Game.Current.GameStateManager.PushState(partyState, 0);
         }
 
         private bool IsPrisonerTransferable(CharacterObject character, PartyScreenLogic.TroopType type, PartyScreenLogic.PartyRosterSide side, PartyBase leftOwnerParty)
@@ -121,9 +151,7 @@ namespace IndustrialRevolution.SellPrisoners
 
         private bool DoneClicked(TroopRoster leftMemberRoster, TroopRoster leftPrisonRoster, TroopRoster rightMemberRoster, TroopRoster rightPrisonRoster, FlattenedTroopRoster takenPrisonerRoster, FlattenedTroopRoster releasedPrisonerRoster, bool isForced, PartyBase leftParty, PartyBase rightParty)
         {
-            int totalGold = 0;
-            int totalCount = 0;
-
+            int totalGold = 0, totalCount = 0;
             foreach (TroopRosterElement element in leftPrisonRoster.GetTroopRoster())
             {
                 totalGold += this.GetPrisonerPrice(element.Character) * element.Number;
@@ -139,7 +167,8 @@ namespace IndustrialRevolution.SellPrisoners
                 InformationManager.DisplayMessage(new InformationMessage(msg.ToString()));
             }
 
-            // Ensure hero prisoners moved to the sell side have their captivity properly ended
+            // EndCaptivityAction updates the hero's internal captivity state;
+            // the roster removal is already handled by the party screen.
             foreach (TroopRosterElement element in leftPrisonRoster.GetTroopRoster())
             {
                 if (element.Character.IsHero && element.Character.HeroObject.IsPrisoner)

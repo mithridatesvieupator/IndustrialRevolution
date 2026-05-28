@@ -43,5 +43,39 @@
 
     <string id="IR_MOD_NAME" text="Industrielle Revolution" />
     <string id="IR_GOLD_RESERVE_BOOST" text="Goldreserven-Boost" />
+
+    <string id="IR_MCM_GROUP_PHILANTHROPY" text="Philanthropie" />
+    <string id="IR_MCM_GROUP_TROOP_SELLING" text="Truppenverkauf" />
+    <string id="IR_MCM_GROUP_FINANCIAL" text="Finanzielle Unterstützung" />
+    <string id="IR_MCM_GROUP_ECONOMY" text="Wirtschaftsanpassungen" />
+    <string id="IR_MCM_GROUP_DISCARD_XP" text="Wegwerf-EP" />
+
+    <string id="IR_MCM_DONATE_TOWN_MAX" text="Stadt Wohlstand Max." />
+    <string id="IR_MCM_DONATE_CASTLE_MAX" text="Burg Wohlstand Max." />
+    <string id="IR_MCM_DONATE_VILLAGE_MAX" text="Dorf Herde Max." />
+    <string id="IR_MCM_GOLD_PROSPERITY_RATIO" text="Gold/Wohlstand-Verhältnis" />
+    <string id="IR_MCM_PROSPERITY_RELATIONS_RATIO" text="Wohlstand/Beziehungs-Verhältnis" />
+    <string id="IR_MCM_PRICE_MULTIPLIER" text="Preismultiplikator" />
+    <string id="IR_MCM_GOLD_PER_RELATION" text="Gold pro Beziehungspunkt" />
+    <string id="IR_MCM_VILLAGE_PRICE_PREMIUM" text="Dorf-Preisaufschlag" />
+    <string id="IR_MCM_HEARTH_GROWTH" text="Herdwachstum-Multiplikator" />
+    <string id="IR_MCM_VILLAGE_FOOD_BONUS" text="Dorf-Nahrungsbonus" />
+    <string id="IR_MCM_DISCARD_XP_ALL" text="EP für alle Gegenstände nach Goldwert" />
+    <string id="IR_MCM_DISCARD_GOLD_PER_XP" text="Goldwert pro EP" />
+    <string id="IR_MCM_DISCARD_PERKS_DOUBLE" text="Perks verdoppeln EP" />
+
+    <string id="IR_MCM_DONATE_TOWN_MAX_HINT" text="Maximaler Stadtwohlstand durch Spenden." />
+    <string id="IR_MCM_DONATE_CASTLE_MAX_HINT" text="Maximaler Burgwohlstand durch Spenden." />
+    <string id="IR_MCM_DONATE_VILLAGE_MAX_HINT" text="Maximale Dorfherde durch Spenden." />
+    <string id="IR_MCM_GOLD_PROSPERITY_RATIO_HINT" text="Gold zum Erhöhen von Wohlstand/Herden um 1." />
+    <string id="IR_MCM_PROSPERITY_RELATIONS_RATIO_HINT" text="Wohlstandsgewinn zum Erhöhen von Beziehungen um 1." />
+    <string id="IR_MCM_PRICE_MULTIPLIER_HINT" text="Multipliziert den Basisverkaufspreis für Truppen." />
+    <string id="IR_MCM_GOLD_PER_RELATION_HINT" text="Goldmenge pro 1 Beziehungspunkt." />
+    <string id="IR_MCM_VILLAGE_PRICE_PREMIUM_HINT" text="Multiplikator für Manufakturwaren und Zugtiere in Dörfern." />
+    <string id="IR_MCM_HEARTH_GROWTH_HINT" text="Multiplikator für Herdwachstum basierend auf Stadtwohlstand." />
+    <string id="IR_MCM_VILLAGE_FOOD_BONUS_HINT" text="Multiplikator für Nahrungsbonus von Dörfern an Städte." />
+    <string id="IR_MCM_DISCARD_XP_ALL_HINT" text="Überschreibt das native Wegwerfsystem." />
+    <string id="IR_MCM_DISCARD_GOLD_PER_XP_HINT" text="Goldwert der Gegenstandsspenden für 1 EP." />
+    <string id="IR_MCM_DISCARD_PERKS_DOUBLE_HINT" text="Diese Perks zu besitzen verdoppelt EP." />
   </strings>
 </base>

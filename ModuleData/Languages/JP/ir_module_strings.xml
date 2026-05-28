@@ -43,5 +43,39 @@
 
     <string id="IR_MOD_NAME" text="産業革命" />
     <string id="IR_GOLD_RESERVE_BOOST" text="金準備ブースト" />
+
+    <string id="IR_MCM_GROUP_PHILANTHROPY" text="慈善活動" />
+    <string id="IR_MCM_GROUP_TROOP_SELLING" text="兵士売却" />
+    <string id="IR_MCM_GROUP_FINANCIAL" text="財政支援" />
+    <string id="IR_MCM_GROUP_ECONOMY" text="経済調整" />
+    <string id="IR_MCM_GROUP_DISCARD_XP" text="廃棄経験値" />
+
+    <string id="IR_MCM_DONATE_TOWN_MAX" text="町の繁栄寄付上限" />
+    <string id="IR_MCM_DONATE_CASTLE_MAX" text="城の繁栄寄付上限" />
+    <string id="IR_MCM_DONATE_VILLAGE_MAX" text="村の炉寄付上限" />
+    <string id="IR_MCM_GOLD_PROSPERITY_RATIO" text="金/繁栄比率" />
+    <string id="IR_MCM_PROSPERITY_RELATIONS_RATIO" text="繁栄/関係比率" />
+    <string id="IR_MCM_PRICE_MULTIPLIER" text="価格倍率" />
+    <string id="IR_MCM_GOLD_PER_RELATION" text="関係ポイントあたりの金" />
+    <string id="IR_MCM_VILLAGE_PRICE_PREMIUM" text="村の価格プレミアム" />
+    <string id="IR_MCM_HEARTH_GROWTH" text="炉成長倍率" />
+    <string id="IR_MCM_VILLAGE_FOOD_BONUS" text="村の食料ボーナス倍率" />
+    <string id="IR_MCM_DISCARD_XP_ALL" text="全アイテムの金価値に応じた経験値" />
+    <string id="IR_MCM_DISCARD_GOLD_PER_XP" text="経験値あたりの金価値" />
+    <string id="IR_MCM_DISCARD_PERKS_DOUBLE" text="特技で経験値2倍" />
+
+    <string id="IR_MCM_DONATE_TOWN_MAX_HINT" text="寄付による最大町繁栄度。" />
+    <string id="IR_MCM_DONATE_CASTLE_MAX_HINT" text="寄付による最大城繁栄度。" />
+    <string id="IR_MCM_DONATE_VILLAGE_MAX_HINT" text="寄付による最大村炉数。" />
+    <string id="IR_MCM_GOLD_PROSPERITY_RATIO_HINT" text="繁栄度/炉を1増やすために必要な金。" />
+    <string id="IR_MCM_PROSPERITY_RELATIONS_RATIO_HINT" text="関係を1増やすために必要な繁栄度の増加量。" />
+    <string id="IR_MCM_PRICE_MULTIPLIER_HINT" text="兵士売却の基本価格に乗算します。" />
+    <string id="IR_MCM_GOLD_PER_RELATION_HINT" text="関係ポイント1あたりの受取金額。" />
+    <string id="IR_MCM_VILLAGE_PRICE_PREMIUM_HINT" text="村の製造品と役畜の価格倍率。" />
+    <string id="IR_MCM_HEARTH_GROWTH_HINT" text="関連都市の繁栄度に基づく村の炉成長倍率。" />
+    <string id="IR_MCM_VILLAGE_FOOD_BONUS_HINT" text="関連村から都市への食料ボーナス倍率。" />
+    <string id="IR_MCM_DISCARD_XP_ALL_HINT" text="ゲーム本来の廃棄システムを置き換えます。" />
+    <string id="IR_MCM_DISCARD_GOLD_PER_XP_HINT" text="1経験値に必要なアイテム寄付の金価値。" />
+    <string id="IR_MCM_DISCARD_PERKS_DOUBLE_HINT" text="これらの特技を持つと経験値が2倍になります。" />
   </strings>
 </base>

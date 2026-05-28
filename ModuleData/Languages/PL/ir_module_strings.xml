@@ -43,5 +43,39 @@
 
     <string id="IR_MOD_NAME" text="Rewolucja Przemysłowa" />
     <string id="IR_GOLD_RESERVE_BOOST" text="Wzmocnienie Rezerwy Złota" />
+
+    <string id="IR_MCM_GROUP_PHILANTHROPY" text="Filantropia" />
+    <string id="IR_MCM_GROUP_TROOP_SELLING" text="Sprzedaż Oddziałów" />
+    <string id="IR_MCM_GROUP_FINANCIAL" text="Wsparcie Finansowe" />
+    <string id="IR_MCM_GROUP_ECONOMY" text="Korekty Gospodarcze" />
+    <string id="IR_MCM_GROUP_DISCARD_XP" text="Doświadczenie z Wyrzutów" />
+
+    <string id="IR_MCM_DONATE_TOWN_MAX" text="Maks. Dobrobyt Miasta" />
+    <string id="IR_MCM_DONATE_CASTLE_MAX" text="Maks. Dobrobyt Zamku" />
+    <string id="IR_MCM_DONATE_VILLAGE_MAX" text="Maks. Ogniska Wsi" />
+    <string id="IR_MCM_GOLD_PROSPERITY_RATIO" text="Stosunek Złota do Dobrobytu" />
+    <string id="IR_MCM_PROSPERITY_RELATIONS_RATIO" text="Stosunek Dobrobytu do Relacji" />
+    <string id="IR_MCM_PRICE_MULTIPLIER" text="Mnożnik Ceny" />
+    <string id="IR_MCM_GOLD_PER_RELATION" text="Złoto za Punkt Relacji" />
+    <string id="IR_MCM_VILLAGE_PRICE_PREMIUM" text="Premia Cenowa Wsi" />
+    <string id="IR_MCM_HEARTH_GROWTH" text="Mnożnik Wzrostu Ognisk" />
+    <string id="IR_MCM_VILLAGE_FOOD_BONUS" text="Bonus Żywności Wsi" />
+    <string id="IR_MCM_DISCARD_XP_ALL" text="Doświadczenie za wszystkie przedmioty wg wartości" />
+    <string id="IR_MCM_DISCARD_GOLD_PER_XP" text="Wartość Złota za Punkt Doświadczenia" />
+    <string id="IR_MCM_DISCARD_PERKS_DOUBLE" text="Umiejętności podwajają doświadczenie" />
+
+    <string id="IR_MCM_DONATE_TOWN_MAX_HINT" text="Maksymalny dobrobyt miasta poprzez darowizny." />
+    <string id="IR_MCM_DONATE_CASTLE_MAX_HINT" text="Maksymalny dobrobyt zamku poprzez darowizny." />
+    <string id="IR_MCM_DONATE_VILLAGE_MAX_HINT" text="Maksymalna liczba ognisk wsi poprzez darowizny." />
+    <string id="IR_MCM_GOLD_PROSPERITY_RATIO_HINT" text="Złoto potrzebne do zwiększenia dobrobytu/ognisk o 1." />
+    <string id="IR_MCM_PROSPERITY_RELATIONS_RATIO_HINT" text="Wzrost dobrobytu potrzebny do zwiększenia relacji o 1." />
+    <string id="IR_MCM_PRICE_MULTIPLIER_HINT" text="Mnoży podstawową cenę sprzedaży oddziałów." />
+    <string id="IR_MCM_GOLD_PER_RELATION_HINT" text="Ilość złota za 1 punkt relacji." />
+    <string id="IR_MCM_VILLAGE_PRICE_PREMIUM_HINT" text="Mnożnik dla towarów wytworzonych i zwierząt pociągowych we wsiach." />
+    <string id="IR_MCM_HEARTH_GROWTH_HINT" text="Mnożnik wzrostu ognisk wsi na podstawie dobrobytu powiązanego miasta." />
+    <string id="IR_MCM_VILLAGE_FOOD_BONUS_HINT" text="Mnożnik bonusu żywności od wsi do powiązanych miast." />
+    <string id="IR_MCM_DISCARD_XP_ALL_HINT" text="Zastępuje natywny system wyrzucania przedmiotów." />
+    <string id="IR_MCM_DISCARD_GOLD_PER_XP_HINT" text="Wartość złota darowanych przedmiotów za 1 punkt doświadczenia." />
+    <string id="IR_MCM_DISCARD_PERKS_DOUBLE_HINT" text="Posiadanie tych umiejętności podwaja doświadczenie." />
   </strings>
 </base>

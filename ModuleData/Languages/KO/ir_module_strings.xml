@@ -43,5 +43,39 @@
 
     <string id="IR_MOD_NAME" text="산업 혁명" />
     <string id="IR_GOLD_RESERVE_BOOST" text="금 비축 증진" />
+
+    <string id="IR_MCM_GROUP_PHILANTHROPY" text="자선활동" />
+    <string id="IR_MCM_GROUP_TROOP_SELLING" text="병사 판매" />
+    <string id="IR_MCM_GROUP_FINANCIAL" text="재정 지원" />
+    <string id="IR_MCM_GROUP_ECONOMY" text="경제 조정" />
+    <string id="IR_MCM_GROUP_DISCARD_XP" text="장비 버리기 경험치" />
+
+    <string id="IR_MCM_DONATE_TOWN_MAX" text="도시 번영 기부 상한" />
+    <string id="IR_MCM_DONATE_CASTLE_MAX" text="성 번영 기부 상한" />
+    <string id="IR_MCM_DONATE_VILLAGE_MAX" text="마을 화덕 기부 상한" />
+    <string id="IR_MCM_GOLD_PROSPERITY_RATIO" text="금/번영 비율" />
+    <string id="IR_MCM_PROSPERITY_RELATIONS_RATIO" text="번영/관계 비율" />
+    <string id="IR_MCM_PRICE_MULTIPLIER" text="가격 배율" />
+    <string id="IR_MCM_GOLD_PER_RELATION" text="관계 포인트당 금" />
+    <string id="IR_MCM_VILLAGE_PRICE_PREMIUM" text="마을 가격 프리미엄" />
+    <string id="IR_MCM_HEARTH_GROWTH" text="화덕 성장 배율" />
+    <string id="IR_MCM_VILLAGE_FOOD_BONUS" text="마을 식량 보너스 배율" />
+    <string id="IR_MCM_DISCARD_XP_ALL" text="금 가치 비례 모든 아이템 경험치" />
+    <string id="IR_MCM_DISCARD_GOLD_PER_XP" text="경험치당 금 가치" />
+    <string id="IR_MCM_DISCARD_PERKS_DOUBLE" text="특기로 경험치 2배" />
+
+    <string id="IR_MCM_DONATE_TOWN_MAX_HINT" text="기부를 통해 달성 가능한 최대 도시 번영도." />
+    <string id="IR_MCM_DONATE_CASTLE_MAX_HINT" text="기부를 통해 달성 가능한 최대 성 번영도." />
+    <string id="IR_MCM_DONATE_VILLAGE_MAX_HINT" text="기부를 통해 달성 가능한 최대 마을 화덕 수." />
+    <string id="IR_MCM_GOLD_PROSPERITY_RATIO_HINT" text="번영/화덕을 1 높이는 데 필요한 금." />
+    <string id="IR_MCM_PROSPERITY_RELATIONS_RATIO_HINT" text="관계를 1 높이는 데 필요한 번영 증가량." />
+    <string id="IR_MCM_PRICE_MULTIPLIER_HINT" text="병사 판매 기본 가격에 곱합니다." />
+    <string id="IR_MCM_GOLD_PER_RELATION_HINT" text="관계 포인트 1당 받는 금 수량." />
+    <string id="IR_MCM_VILLAGE_PRICE_PREMIUM_HINT" text="마을의 제조품과 역축 가격 배율." />
+    <string id="IR_MCM_HEARTH_GROWTH_HINT" text="연결 도시 번영도에 따른 마을 화덕 성장 배율." />
+    <string id="IR_MCM_VILLAGE_FOOD_BONUS_HINT" text="연결 마을에서 도시로의 식량 보너스 배율." />
+    <string id="IR_MCM_DISCARD_XP_ALL_HINT" text="기본 버리기 시스템을 대체합니다." />
+    <string id="IR_MCM_DISCARD_GOLD_PER_XP_HINT" text="경험치 1당 필요한 아이템 기부 금 가치." />
+    <string id="IR_MCM_DISCARD_PERKS_DOUBLE_HINT" text="이 특기를 보유하면 경험치가 2배가 됩니다." />
   </strings>
 </base>

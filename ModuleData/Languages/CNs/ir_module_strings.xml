@@ -43,5 +43,39 @@
 
     <string id="IR_MOD_NAME" text="工业革命" />
     <string id="IR_GOLD_RESERVE_BOOST" text="金库建设加速" />
+
+    <string id="IR_MCM_GROUP_PHILANTHROPY" text="慈善" />
+    <string id="IR_MCM_GROUP_TROOP_SELLING" text="出售士兵" />
+    <string id="IR_MCM_GROUP_FINANCIAL" text="财务支持" />
+    <string id="IR_MCM_GROUP_ECONOMY" text="经济调整" />
+    <string id="IR_MCM_GROUP_DISCARD_XP" text="丢弃物品经验" />
+
+    <string id="IR_MCM_DONATE_TOWN_MAX" text="城镇繁荣捐赠上限" />
+    <string id="IR_MCM_DONATE_CASTLE_MAX" text="城堡繁荣捐赠上限" />
+    <string id="IR_MCM_DONATE_VILLAGE_MAX" text="村庄炉灶捐赠上限" />
+    <string id="IR_MCM_GOLD_PROSPERITY_RATIO" text="金币/繁荣比例" />
+    <string id="IR_MCM_PROSPERITY_RELATIONS_RATIO" text="繁荣/关系比例" />
+    <string id="IR_MCM_PRICE_MULTIPLIER" text="价格倍率" />
+    <string id="IR_MCM_GOLD_PER_RELATION" text="每关系点金币数" />
+    <string id="IR_MCM_VILLAGE_PRICE_PREMIUM" text="村庄价格溢价" />
+    <string id="IR_MCM_HEARTH_GROWTH" text="炉灶增长倍率" />
+    <string id="IR_MCM_VILLAGE_FOOD_BONUS" text="村庄食物加成倍率" />
+    <string id="IR_MCM_DISCARD_XP_ALL" text="所有物品按金币价值获得经验" />
+    <string id="IR_MCM_DISCARD_GOLD_PER_XP" text="每经验点所需金币价值" />
+    <string id="IR_MCM_DISCARD_PERKS_DOUBLE" text="特技双倍经验" />
+
+    <string id="IR_MCM_DONATE_TOWN_MAX_HINT" text="通过捐赠可达到的最大城镇繁荣度。" />
+    <string id="IR_MCM_DONATE_CASTLE_MAX_HINT" text="通过捐赠可达到的最大城堡繁荣度。" />
+    <string id="IR_MCM_DONATE_VILLAGE_MAX_HINT" text="通过捐赠可达到的最大村庄炉灶数。" />
+    <string id="IR_MCM_GOLD_PROSPERITY_RATIO_HINT" text="将繁荣度/炉灶数提高1所需的金币数。" />
+    <string id="IR_MCM_PROSPERITY_RELATIONS_RATIO_HINT" text="将关系提高1所需的繁荣度增加量。" />
+    <string id="IR_MCM_PRICE_MULTIPLIER_HINT" text="乘以士兵出售基础价格。" />
+    <string id="IR_MCM_GOLD_PER_RELATION_HINT" text="每1关系点获得的金币数量。" />
+    <string id="IR_MCM_VILLAGE_PRICE_PREMIUM_HINT" text="村庄中制造商品和役用动物的价格倍率。" />
+    <string id="IR_MCM_HEARTH_GROWTH_HINT" text="基于绑定城镇繁荣度的村庄炉灶增长倍率。" />
+    <string id="IR_MCM_VILLAGE_FOOD_BONUS_HINT" text="绑定村庄向城镇提供的食物加成倍率。" />
+    <string id="IR_MCM_DISCARD_XP_ALL_HINT" text="覆盖原版丢弃系统。" />
+    <string id="IR_MCM_DISCARD_GOLD_PER_XP_HINT" text="每1点经验所需的物品捐赠金币价值。" />
+    <string id="IR_MCM_DISCARD_PERKS_DOUBLE_HINT" text="拥有这些特技可使经验值翻倍。" />
   </strings>
 </base>

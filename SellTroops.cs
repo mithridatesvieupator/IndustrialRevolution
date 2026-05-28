@@ -13,6 +13,10 @@ namespace IndustrialRevolution.SellTroops
 {
     public class SellTroops : CampaignBehaviorBase
     {
+        // Tracks the last total shown via DisplayMessage so we only fire a new
+        // notification when the amount actually changes (one message per drag).
+        private int _lastNotifiedGold = -1;
+
         public override void RegisterEvents()
         {
             CampaignEvents.OnSessionLaunchedEvent.AddNonSerializedListener(this, new Action<CampaignGameStarter>(this.OnSessionLaunched));
@@ -34,24 +38,31 @@ namespace IndustrialRevolution.SellTroops
 
         private void sell_soldiers_consequence(MenuCallbackArgs args)
         {
+            _lastNotifiedGold = -1;
             this.OpenSoldierSellingScreen();
         }
 
         private void OpenSoldierSellingScreen()
         {
+            // TransferableWithTrade on the member section activates the native
+            // centre-bottom gold ticker.  Non-null memberRosterLeft is required
+            // to properly initialise the left-side member slot.
+            // Note: the ticker will show the game's own troop trade value which
+            // may differ from our custom formula; the Done button hint and the
+            // post-sale notification both reflect the actual amount paid.
             PartyScreenHelper.OpenScreenWithCondition(
                 new IsTroopTransferableDelegate(this.IsTroopTransferable),
                 new PartyPresentationDoneButtonConditionDelegate(this.DoneButtonCondition),
                 new PartyPresentationDoneButtonDelegate(this.DoneClicked),
                 null,
-                PartyScreenLogic.TransferState.Transferable,
-                PartyScreenLogic.TransferState.NotTransferable,
+                PartyScreenLogic.TransferState.TransferableWithTrade,  // members: trade mode → gold ticker
+                PartyScreenLogic.TransferState.NotTransferable,        // prisoners: locked
                 new TextObject("{=IR_SELL_TROOPS_SCREEN}Sell Troops"),
                 100000,
                 false,
                 false,
                 PartyScreenHelper.PartyScreenMode.TroopsManage,
-                null,
+                TroopRoster.CreateDummyTroopRoster(),   // memberRosterLeft — non-null initialises the section
                 null
             );
         }
@@ -68,6 +79,18 @@ namespace IndustrialRevolution.SellTroops
                 totalBaseValue += this.GetSoldierPrice(element.Character) * element.Number;
             float finalGoldF = (float)totalBaseValue * Settings.Instance.SoldierSellingPriceMultiplier;
             int finalGold = (int)Math.Max(0f, finalGoldF);
+
+            // Show a notification in the message log whenever the running total
+            // changes — one message per drag so the player can see the live value
+            // in the same area they're watching, without spamming the log.
+            if (finalGold != _lastNotifiedGold)
+            {
+                _lastNotifiedGold = finalGold;
+                var live = new TextObject("{=IR_SELL_PRICE_HINT}Total: {GOLD} gold");
+                live.SetTextVariable("GOLD", finalGold);
+                InformationManager.DisplayMessage(new InformationMessage(live.ToString()));
+            }
+
             var hint = new TextObject("{=IR_SELL_PRICE_HINT}Total: {GOLD} gold");
             hint.SetTextVariable("GOLD", finalGold);
             return new Tuple<bool, TextObject>(true, hint);

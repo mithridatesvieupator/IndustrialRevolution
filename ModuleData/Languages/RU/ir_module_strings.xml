@@ -43,5 +43,39 @@
 
     <string id="IR_MOD_NAME" text="Промышленная революция" />
     <string id="IR_GOLD_RESERVE_BOOST" text="Усиление золотого резерва" />
+
+    <string id="IR_MCM_GROUP_PHILANTHROPY" text="Благотворительность" />
+    <string id="IR_MCM_GROUP_TROOP_SELLING" text="Продажа Войск" />
+    <string id="IR_MCM_GROUP_FINANCIAL" text="Финансовая Поддержка" />
+    <string id="IR_MCM_GROUP_ECONOMY" text="Экономические Настройки" />
+    <string id="IR_MCM_GROUP_DISCARD_XP" text="Опыт за Выброс" />
+
+    <string id="IR_MCM_DONATE_TOWN_MAX" text="Макс. Процветание Города" />
+    <string id="IR_MCM_DONATE_CASTLE_MAX" text="Макс. Процветание Замка" />
+    <string id="IR_MCM_DONATE_VILLAGE_MAX" text="Макс. Очаги Деревни" />
+    <string id="IR_MCM_GOLD_PROSPERITY_RATIO" text="Соотношение Золота/Процветания" />
+    <string id="IR_MCM_PROSPERITY_RELATIONS_RATIO" text="Соотношение Процветания/Отношений" />
+    <string id="IR_MCM_PRICE_MULTIPLIER" text="Множитель Цены" />
+    <string id="IR_MCM_GOLD_PER_RELATION" text="Золото за Очко Отношений" />
+    <string id="IR_MCM_VILLAGE_PRICE_PREMIUM" text="Надбавка к Цене Деревни" />
+    <string id="IR_MCM_HEARTH_GROWTH" text="Множитель Роста Очагов" />
+    <string id="IR_MCM_VILLAGE_FOOD_BONUS" text="Бонус Еды Деревни" />
+    <string id="IR_MCM_DISCARD_XP_ALL" text="Опыт за все предметы пропорционально золоту" />
+    <string id="IR_MCM_DISCARD_GOLD_PER_XP" text="Ценность Золота за Опыт" />
+    <string id="IR_MCM_DISCARD_PERKS_DOUBLE" text="Перки удваивают опыт" />
+
+    <string id="IR_MCM_DONATE_TOWN_MAX_HINT" text="Максимальное процветание города через пожертвования." />
+    <string id="IR_MCM_DONATE_CASTLE_MAX_HINT" text="Максимальное процветание замка через пожертвования." />
+    <string id="IR_MCM_DONATE_VILLAGE_MAX_HINT" text="Максимальное количество очагов деревни через пожертвования." />
+    <string id="IR_MCM_GOLD_PROSPERITY_RATIO_HINT" text="Золото для увеличения процветания/очагов на 1." />
+    <string id="IR_MCM_PROSPERITY_RELATIONS_RATIO_HINT" text="Прирост процветания для увеличения отношений на 1." />
+    <string id="IR_MCM_PRICE_MULTIPLIER_HINT" text="Умножает базовую цену продажи войск." />
+    <string id="IR_MCM_GOLD_PER_RELATION_HINT" text="Количество золота за 1 очко отношений." />
+    <string id="IR_MCM_VILLAGE_PRICE_PREMIUM_HINT" text="Множитель для производственных товаров и рабочих животных в деревнях." />
+    <string id="IR_MCM_HEARTH_GROWTH_HINT" text="Множитель роста очагов деревни на основе процветания связанного города." />
+    <string id="IR_MCM_VILLAGE_FOOD_BONUS_HINT" text="Множитель бонуса еды от деревень к городам." />
+    <string id="IR_MCM_DISCARD_XP_ALL_HINT" text="Заменяет стандартную систему выброса предметов." />
+    <string id="IR_MCM_DISCARD_GOLD_PER_XP_HINT" text="Золотая стоимость пожертвований предметов для 1 опыта." />
+    <string id="IR_MCM_DISCARD_PERKS_DOUBLE_HINT" text="Наличие этих перков удваивает опыт." />
   </strings>
 </base>

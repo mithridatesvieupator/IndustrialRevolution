@@ -43,5 +43,39 @@
 
     <string id="IR_MOD_NAME" text="Sanayi Devrimi" />
     <string id="IR_GOLD_RESERVE_BOOST" text="Altın Rezervi Takviyesi" />
+
+    <string id="IR_MCM_GROUP_PHILANTHROPY" text="Hayırseverlik" />
+    <string id="IR_MCM_GROUP_TROOP_SELLING" text="Asker Satışı" />
+    <string id="IR_MCM_GROUP_FINANCIAL" text="Mali Destek" />
+    <string id="IR_MCM_GROUP_ECONOMY" text="Ekonomi Ayarları" />
+    <string id="IR_MCM_GROUP_DISCARD_XP" text="Ekipman XP" />
+
+    <string id="IR_MCM_DONATE_TOWN_MAX" text="Kasaba Refah Bağış Limiti" />
+    <string id="IR_MCM_DONATE_CASTLE_MAX" text="Kale Refah Bağış Limiti" />
+    <string id="IR_MCM_DONATE_VILLAGE_MAX" text="Köy Ocak Bağış Limiti" />
+    <string id="IR_MCM_GOLD_PROSPERITY_RATIO" text="Altın/Refah Oranı" />
+    <string id="IR_MCM_PROSPERITY_RELATIONS_RATIO" text="Refah/İlişki Oranı" />
+    <string id="IR_MCM_PRICE_MULTIPLIER" text="Fiyat Çarpanı" />
+    <string id="IR_MCM_GOLD_PER_RELATION" text="İlişki Başına Altın" />
+    <string id="IR_MCM_VILLAGE_PRICE_PREMIUM" text="Köy Fiyat Primi" />
+    <string id="IR_MCM_HEARTH_GROWTH" text="Ocak Büyüme Çarpanı" />
+    <string id="IR_MCM_VILLAGE_FOOD_BONUS" text="Köy Yiyecek Bonusu" />
+    <string id="IR_MCM_DISCARD_XP_ALL" text="Tüm eşyalar için altın değerine göre XP" />
+    <string id="IR_MCM_DISCARD_GOLD_PER_XP" text="XP Başına Altın Değeri" />
+    <string id="IR_MCM_DISCARD_PERKS_DOUBLE" text="Yeteneklerle XP İkiye Katlanır" />
+
+    <string id="IR_MCM_DONATE_TOWN_MAX_HINT" text="Bağış yoluyla ulaşılabilecek maksimum kasaba refahı." />
+    <string id="IR_MCM_DONATE_CASTLE_MAX_HINT" text="Bağış yoluyla ulaşılabilecek maksimum kale refahı." />
+    <string id="IR_MCM_DONATE_VILLAGE_MAX_HINT" text="Bağış yoluyla ulaşılabilecek maksimum köy ocak sayısı." />
+    <string id="IR_MCM_GOLD_PROSPERITY_RATIO_HINT" text="Refahı 1 artırmak için gereken altın miktarı." />
+    <string id="IR_MCM_PROSPERITY_RELATIONS_RATIO_HINT" text="İlişkiyi 1 artırmak için gereken refah artışı." />
+    <string id="IR_MCM_PRICE_MULTIPLIER_HINT" text="Temel asker satış fiyatını çarpar." />
+    <string id="IR_MCM_GOLD_PER_RELATION_HINT" text="Her 1 ilişki puanı için alınan altın miktarı." />
+    <string id="IR_MCM_VILLAGE_PRICE_PREMIUM_HINT" text="Köylerdeki üretilmiş mallar ve tarım hayvanları için fiyat çarpanı." />
+    <string id="IR_MCM_HEARTH_GROWTH_HINT" text="Bağlı kasaba refahına göre köy ocak büyüme çarpanı." />
+    <string id="IR_MCM_VILLAGE_FOOD_BONUS_HINT" text="Bağlı köylerden kasabalara gelen yiyecek bonusu çarpanı." />
+    <string id="IR_MCM_DISCARD_XP_ALL_HINT" text="Yerel atma sistemini devre dışı bırakır." />
+    <string id="IR_MCM_DISCARD_GOLD_PER_XP_HINT" text="1 XP için gereken eşya bağışı altın değeri." />
+    <string id="IR_MCM_DISCARD_PERKS_DOUBLE_HINT" text="Bu yeteneklere sahip olmak XP'yi ikiye katlar." />
   </strings>
 </base>

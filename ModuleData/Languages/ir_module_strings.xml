@@ -43,5 +43,39 @@
 
     <string id="IR_MOD_NAME" text="Industrial Revolution" />
     <string id="IR_GOLD_RESERVE_BOOST" text="Gold Reserve Boost" />
+
+    <string id="IR_MCM_GROUP_PHILANTHROPY" text="Philanthropy" />
+    <string id="IR_MCM_GROUP_TROOP_SELLING" text="Troop Selling" />
+    <string id="IR_MCM_GROUP_FINANCIAL" text="Financial Support" />
+    <string id="IR_MCM_GROUP_ECONOMY" text="Economy Tweaks" />
+    <string id="IR_MCM_GROUP_DISCARD_XP" text="Discard XP" />
+
+    <string id="IR_MCM_DONATE_TOWN_MAX" text="Donate Town Prosperity Max" />
+    <string id="IR_MCM_DONATE_CASTLE_MAX" text="Donate Castle Prosperity Max" />
+    <string id="IR_MCM_DONATE_VILLAGE_MAX" text="Donate Village Hearth Max" />
+    <string id="IR_MCM_GOLD_PROSPERITY_RATIO" text="Gold To Prosperity Ratio" />
+    <string id="IR_MCM_PROSPERITY_RELATIONS_RATIO" text="Prosperity To Relations Ratio" />
+    <string id="IR_MCM_PRICE_MULTIPLIER" text="Price Multiplier" />
+    <string id="IR_MCM_GOLD_PER_RELATION" text="Gold per Relation Point" />
+    <string id="IR_MCM_VILLAGE_PRICE_PREMIUM" text="Village Price Premium" />
+    <string id="IR_MCM_HEARTH_GROWTH" text="Hearth Growth Multiplier" />
+    <string id="IR_MCM_VILLAGE_FOOD_BONUS" text="Village Food Bonus Multiplier" />
+    <string id="IR_MCM_DISCARD_XP_ALL" text="XP for all items, proportional to gold value" />
+    <string id="IR_MCM_DISCARD_GOLD_PER_XP" text="Gold Value Per XP" />
+    <string id="IR_MCM_DISCARD_PERKS_DOUBLE" text="Paid In Promise, Giving Hands both double XP reward" />
+
+    <string id="IR_MCM_DONATE_TOWN_MAX_HINT" text="Max town prosperity via donation." />
+    <string id="IR_MCM_DONATE_CASTLE_MAX_HINT" text="Max castle prosperity via donation." />
+    <string id="IR_MCM_DONATE_VILLAGE_MAX_HINT" text="Max village hearths via donation." />
+    <string id="IR_MCM_GOLD_PROSPERITY_RATIO_HINT" text="Gold required to increase prosperity/hearths by 1." />
+    <string id="IR_MCM_PROSPERITY_RELATIONS_RATIO_HINT" text="Prosperity gain required to increase relations by 1." />
+    <string id="IR_MCM_PRICE_MULTIPLIER_HINT" text="Multiplies the base troop sale price." />
+    <string id="IR_MCM_GOLD_PER_RELATION_HINT" text="Amount of gold received per 1 relation point." />
+    <string id="IR_MCM_VILLAGE_PRICE_PREMIUM_HINT" text="Multiplier for manufactured goods and draft animals in villages." />
+    <string id="IR_MCM_HEARTH_GROWTH_HINT" text="Multiplier for village hearth growth based on bound town prosperity." />
+    <string id="IR_MCM_VILLAGE_FOOD_BONUS_HINT" text="Multiplier for the food bonus towns receive from bound villages." />
+    <string id="IR_MCM_DISCARD_XP_ALL_HINT" text="Overrides native discard system." />
+    <string id="IR_MCM_DISCARD_GOLD_PER_XP_HINT" text="Gold value of item donations required for 1 XP." />
+    <string id="IR_MCM_DISCARD_PERKS_DOUBLE_HINT" text="Possessing these perks doubles XP." />
   </strings>
 </base>
