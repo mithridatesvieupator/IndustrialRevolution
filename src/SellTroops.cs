@@ -28,6 +28,7 @@ namespace IndustrialRevolution.SellTroops
         {
             starter.AddGameMenuOption("town", "sell_troops", "{=IR_SELL_TROOPS}Sell troops", new GameMenuOption.OnConditionDelegate(this.sell_soldiers_condition), new GameMenuOption.OnConsequenceDelegate(this.sell_soldiers_consequence), false, -1, false, null);
             starter.AddGameMenuOption("village", "sell_troops", "{=IR_SELL_TROOPS}Sell troops", new GameMenuOption.OnConditionDelegate(this.sell_soldiers_condition), new GameMenuOption.OnConsequenceDelegate(this.sell_soldiers_consequence), false, -1, false, null);
+            starter.AddGameMenuOption("castle", "sell_troops", "{=IR_SELL_TROOPS}Sell troops", new GameMenuOption.OnConditionDelegate(this.sell_soldiers_condition), new GameMenuOption.OnConsequenceDelegate(this.sell_soldiers_consequence), false, -1, false, null);
         }
 
         private bool sell_soldiers_condition(MenuCallbackArgs args)

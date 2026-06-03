@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Helpers;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.Actions;
+using TaleWorlds.CampaignSystem.CharacterDevelopment;
 using TaleWorlds.CampaignSystem.GameMenus;
 using TaleWorlds.CampaignSystem.GameState;
 using TaleWorlds.CampaignSystem.Party;
@@ -53,11 +54,13 @@ namespace IndustrialRevolution.SellPrisoners
             int totalCount = 0;
             List<CharacterObject> nonHeroesToSell = new List<CharacterObject>();
             List<Hero> heroesToRelease = new List<Hero>();
+            TroopRoster soldRoster = TroopRoster.CreateDummyTroopRoster();
 
             foreach (TroopRosterElement element in MobileParty.MainParty.PrisonRoster.GetTroopRoster())
             {
                 totalGold += this.GetPrisonerPrice(element.Character) * element.Number;
                 totalCount += element.Number;
+                soldRoster.AddToCounts(element.Character, element.Number);
                 if (element.Character.IsHero)
                     heroesToRelease.Add(element.Character.HeroObject);
                 else
@@ -76,6 +79,9 @@ namespace IndustrialRevolution.SellPrisoners
 
                 foreach (Hero hero in heroesToRelease)
                     EndCaptivityAction.ApplyByRansom(hero, Hero.MainHero);
+
+                // Award roguery XP via the same routine the native ransom broker uses.
+                SkillLevelingManager.OnPrisonerSell(MobileParty.MainParty, soldRoster);
 
                 var msg = new TextObject("{=IR_PRISONERS_SOLD_MSG}You sold {COUNT} prisoners for {GOLD} gold.");
                 msg.SetTextVariable("COUNT", totalCount);
@@ -152,27 +158,42 @@ namespace IndustrialRevolution.SellPrisoners
         private bool DoneClicked(TroopRoster leftMemberRoster, TroopRoster leftPrisonRoster, TroopRoster rightMemberRoster, TroopRoster rightPrisonRoster, FlattenedTroopRoster takenPrisonerRoster, FlattenedTroopRoster releasedPrisonerRoster, bool isForced, PartyBase leftParty, PartyBase rightParty)
         {
             int totalGold = 0, totalCount = 0;
+            TroopRoster soldRoster = TroopRoster.CreateDummyTroopRoster();
             foreach (TroopRosterElement element in leftPrisonRoster.GetTroopRoster())
             {
                 totalGold += this.GetPrisonerPrice(element.Character) * element.Number;
                 totalCount += element.Number;
+                soldRoster.AddToCounts(element.Character, element.Number);
             }
 
-            if (totalGold > 0)
+            if (totalCount > 0)
             {
                 Hero.MainHero.ChangeHeroGold(totalGold);
+
+                // The screen runs on CLONED rosters with DoNotApplyGoldTransactions,
+                // so the real party is untouched — we must remove the sold prisoners
+                // from MobileParty.MainParty ourselves (leftPrisonRoster is the clone
+                // listing what was moved to the sell side).
+                foreach (TroopRosterElement element in leftPrisonRoster.GetTroopRoster())
+                {
+                    if (element.Character.IsHero)
+                    {
+                        if (element.Character.HeroObject.IsPrisoner)
+                            EndCaptivityAction.ApplyByRansom(element.Character.HeroObject, Hero.MainHero);
+                    }
+                    else
+                    {
+                        MobileParty.MainParty.PrisonRoster.RemoveTroop(element.Character, element.Number);
+                    }
+                }
+
+                // Award roguery XP via the same routine the native ransom broker uses.
+                SkillLevelingManager.OnPrisonerSell(MobileParty.MainParty, soldRoster);
+
                 var msg = new TextObject("{=IR_PRISONERS_SOLD_MSG}You sold {COUNT} prisoners for {GOLD} gold.");
                 msg.SetTextVariable("COUNT", totalCount);
                 msg.SetTextVariable("GOLD", totalGold);
                 InformationManager.DisplayMessage(new InformationMessage(msg.ToString()));
-            }
-
-            // EndCaptivityAction updates the hero's internal captivity state;
-            // the roster removal is already handled by the party screen.
-            foreach (TroopRosterElement element in leftPrisonRoster.GetTroopRoster())
-            {
-                if (element.Character.IsHero && element.Character.HeroObject.IsPrisoner)
-                    EndCaptivityAction.ApplyByRansom(element.Character.HeroObject, Hero.MainHero);
             }
 
             return true;

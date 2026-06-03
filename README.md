@@ -87,6 +87,11 @@ Mods that alter economy or notable dialogue: **Banner Kings**, **Dramalord**, **
 
 ## Changelog
 
+### v1.1.2
+- Fixed: "Sell some prisoners" gave gold but left the prisoners in your party
+- "Sell all prisoners" now grants Roguery XP, matching the tavern ransom broker
+- Added "Sell Troops" option to castle menus (previously towns and villages only)
+
 ### v1.1.1
 - MCM settings are now translated in all 11 supported languages
 - Fixed: "Sell some prisoners" screen was not showing prisoners
