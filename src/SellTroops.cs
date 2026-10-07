@@ -51,7 +51,7 @@ namespace IndustrialRevolution.SellTroops
             // Note: the ticker will show the game's own troop trade value which
             // may differ from our custom formula; the Done button hint and the
             // post-sale notification both reflect the actual amount paid.
-            PartyScreenHelper.OpenScreenWithCondition(
+            IRCompat.OpenScreenWithCondition(
                 new IsTroopTransferableDelegate(this.IsTroopTransferable),
                 new PartyPresentationDoneButtonConditionDelegate(this.DoneButtonCondition),
                 new PartyPresentationDoneButtonDelegate(this.DoneClicked),
@@ -62,7 +62,7 @@ namespace IndustrialRevolution.SellTroops
                 100000,
                 false,
                 false,
-                PartyScreenHelper.PartyScreenMode.TroopsManage,
+                IRScreenMode.TroopsManage,
                 TroopRoster.CreateDummyTroopRoster(),   // memberRosterLeft — non-null initialises the section
                 null
             );

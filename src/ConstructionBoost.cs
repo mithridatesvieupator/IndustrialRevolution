@@ -46,7 +46,7 @@ namespace IndustrialRevolution.Construction
                                     town.BoostBuildingProcess = 0;
                                 }
 
-                                BuildingHelper.CheckIfBuildingIsComplete(current);
+                                IRCompat.CheckIfBuildingIsComplete(current);
                             }
                         }
                     }

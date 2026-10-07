@@ -99,6 +99,45 @@ namespace IndustrialRevolution.SellPrisoners
             // Without an explicit RightPrisonerRoster the party screen never renders the
             // prisoner section on the player's side.  The only way to set it is through
             // PartyScreenLogicInitializationData, exactly as the native ransom broker does.
+#if GAME_V1212
+            // Bannerlord 1.2.12 has no DoNotApplyGoldTransactions. Prisoners are made plainly Transferable (not
+            // TransferableWithTrade) so the native screen never computes or pays ransom gold; DoneClicked pays our
+            // own price exactly as on newer versions. The gold ticker is not shown, the Done button hint is.
+            var initData = PartyScreenLogicInitializationData.CreateBasicInitDataWithMainParty(
+                TroopRoster.CreateDummyTroopRoster(),                         // leftMemberRoster  (sell list, starts empty)
+                TroopRoster.CreateDummyTroopRoster(),                         // leftPrisonerRoster (sell list, starts empty)
+                PartyScreenLogic.TransferState.NotTransferable,               // memberTransferState  — troops locked
+                PartyScreenLogic.TransferState.Transferable,                  // prisonerTransferState — no native trade gold
+                PartyScreenLogic.TransferState.NotTransferable,               // accompanyingTransferState
+                new IsTroopTransferableDelegate(this.IsPrisonerTransferable), // only prisoners movable
+                null,                                                          // leftOwnerParty
+                new TextObject("{=IR_SELL_PRISONERS_SCREEN}Sell Prisoners"),  // leftPartyName (LHS panel header)
+                new TextObject("{=IR_SELL_PRISONERS_SCREEN}Sell Prisoners"),  // screen header (centre top)
+                null,                                                          // leftLeaderHero
+                0,                                                             // leftPartyMembersSizeLimit
+                0,                                                             // leftPartyPrisonersSizeLimit
+                new PartyPresentationDoneButtonDelegate(this.DoneClicked),
+                new PartyPresentationDoneButtonConditionDelegate(this.DoneButtonCondition),
+                null,   // cancelButtonDelegate
+                null,   // cancelButtonActivateDelegate
+                null,   // partyScreenClosedDelegate
+                false,  // isDismissMode
+                false,  // transferHealthiesGetWoundedsFirst
+                false,  // isTroopUpgradesDisabled
+                false,  // showProgressBar
+                0       // questModeWageDaysMultiplier
+            );
+
+            initData.RightMemberRoster  = MobileParty.MainParty.MemberRoster.CloneRosterData();
+            initData.RightPrisonerRoster = MobileParty.MainParty.PrisonRoster.CloneRosterData();
+
+            IRCompat.SetPartyScreenManagerState(IRScreenMode.Ransom, isDonating: false);
+            var partyState = Game.Current.GameStateManager.CreateState<PartyState>();
+            var partyScreenLogic = new PartyScreenLogic();
+            partyScreenLogic.Initialize(initData);
+            partyState.InitializeLogic(partyScreenLogic);
+            Game.Current.GameStateManager.PushState(partyState, 0);
+#else
             var initData = PartyScreenLogicInitializationData.CreateBasicInitDataWithMainParty(
                 TroopRoster.CreateDummyTroopRoster(),                         // leftMemberRoster  (sell list, starts empty)
                 TroopRoster.CreateDummyTroopRoster(),                         // leftPrisonerRoster (sell list, starts empty)
@@ -138,6 +177,7 @@ namespace IndustrialRevolution.SellPrisoners
             partyScreenLogic.Initialize(initData);
             partyState.PartyScreenLogic = partyScreenLogic;
             Game.Current.GameStateManager.PushState(partyState, 0);
+#endif
         }
 
         private bool IsPrisonerTransferable(CharacterObject character, PartyScreenLogic.TroopType type, PartyScreenLogic.PartyRosterSide side, PartyBase leftOwnerParty)
