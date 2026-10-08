@@ -87,6 +87,9 @@ Mods that alter economy or notable dialogue: **Banner Kings**, **Dramalord**, **
 
 ## Changelog
 
+### v1.1.3
+- Fixed: queueing or hovering a building project in a town or castle with an empty gold reserve crashed the game ("Attempted to divide by zero")
+
 ### v1.1.2
 - Fixed: "Sell some prisoners" gave gold but left the prisoners in your party
 - Selling prisoners (both "sell all" and "sell some") now grants Roguery XP, matching the tavern ransom broker

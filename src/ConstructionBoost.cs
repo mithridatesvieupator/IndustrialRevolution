@@ -65,8 +65,10 @@ namespace IndustrialRevolution.Construction
             int currentReserve = town.BoostBuildingProcess;
             if (currentReserve <= 0 || town.Settlement == null)
             {
+                // Never report a 0 boost cost: BuildingHelper.GetDaysToComplete divides the reserve by it
+                // (int division), so an empty reserve threw DivideByZeroException in the building project screen.
                 this._cachedBonus = 0;
-                this._cachedCost = 0;
+                this._cachedCost = town.IsCastle ? 250 : 500;
             }
             else
             {
