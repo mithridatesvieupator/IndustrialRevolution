@@ -77,5 +77,12 @@
     <string id="IR_MCM_DISCARD_XP_ALL_HINT" text="Substitui o sistema nativo de descarte." />
     <string id="IR_MCM_DISCARD_GOLD_PER_XP_HINT" text="Valor em ouro de itens doados para 1 XP." />
     <string id="IR_MCM_DISCARD_PERKS_DOUBLE_HINT" text="Ter essas vantagens duplica o XP obtido." />
+
+    <string id="IR_DONATE_ERR_INVALID" text="Quantia inválida." />
+    <string id="IR_DONATE_ERR_NUMBER" text="Insira um número válido ou 'max'." />
+    <string id="IR_DONATE_ERR_POSITIVE" text="A doação deve ser maior que zero." />
+    <string id="IR_DONATE_ERR_GOLD" text="Você não tem ouro suficiente." />
+    <string id="IR_DONATE_ERR_CAP" text="Você só pode doar até {GOLD} de ouro para atingir o limite." />
+    <string id="IR_GIVE_TROOPS_MSG" text="{NAME} ganhou {POWER} de poder, a relação aumentou em {RELATION}, seu clã ganhou {RENOWN} de renome e as tropas doadas se juntaram à milícia." />
   </strings>
 </base>

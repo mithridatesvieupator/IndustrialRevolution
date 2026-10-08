@@ -88,5 +88,12 @@
     <string id="IR_MCM_DISCARD_GOLD_PER_XP_HINT" text="Gold value of item donations required for 1 XP." />
     <string id="IR_MCM_DISCARD_PERKS_DOUBLE_HINT" text="Possessing these perks doubles XP." />
 
+
+    <string id="IR_DONATE_ERR_INVALID" text="Invalid amount." />
+    <string id="IR_DONATE_ERR_NUMBER" text="Please enter a valid number or 'max'." />
+    <string id="IR_DONATE_ERR_POSITIVE" text="Donation must be greater than zero." />
+    <string id="IR_DONATE_ERR_GOLD" text="You do not have enough gold." />
+    <string id="IR_DONATE_ERR_CAP" text="You can only donate up to {GOLD} gold to reach the cap." />
+    <string id="IR_GIVE_TROOPS_MSG" text="{NAME} gained {POWER} power, relation increased by {RELATION}, your clan gained {RENOWN} renown, and the donated troops joined the militia." />
   </strings>
 </base>

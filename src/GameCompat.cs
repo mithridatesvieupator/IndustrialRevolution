@@ -1,6 +1,5 @@
 using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.CampaignSystem.Roster;
-using TaleWorlds.CampaignSystem.Settlements.Buildings;
 using TaleWorlds.Localization;
 #if !GAME_V1212
 using Helpers;
@@ -36,27 +35,6 @@ namespace IndustrialRevolution
             return party.TotalStrength;
 #else
             return party.EstimatedStrength;
-#endif
-        }
-
-        // 1.2.12 has no BuildingHelper.CheckIfBuildingIsComplete; this mirrors the later game's implementation.
-        public static void CheckIfBuildingIsComplete(Building building)
-        {
-#if GAME_V1212
-            if (building.GetConstructionCost() <= building.BuildingProgress)
-            {
-                if (building.CurrentLevel < 3)
-                {
-                    building.LevelUp();
-                }
-                if (building.CurrentLevel == 3)
-                {
-                    building.BuildingProgress = building.GetConstructionCost();
-                }
-                building.Town.BuildingsInProgress.Dequeue();
-            }
-#else
-            BuildingHelper.CheckIfBuildingIsComplete(building);
 #endif
         }
 

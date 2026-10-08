@@ -34,7 +34,7 @@ namespace IndustrialRevolution.GiveTroops
 
         private bool ConditionToAskAboutGivingTroops()
         {
-            if (Settlement.CurrentSettlement == null || !Hero.OneToOneConversationHero.IsNotable) return false;
+            if (Settlement.CurrentSettlement == null || Hero.OneToOneConversationHero == null || !Hero.OneToOneConversationHero.IsNotable) return false;
 
             foreach (TroopRosterElement troopRosterElement in MobileParty.MainParty.MemberRoster.GetTroopRoster())
             {
@@ -43,11 +43,12 @@ namespace IndustrialRevolution.GiveTroops
             return false;
         }
 
-        private bool ConditionToSayThankYou() => MobileParty.MainParty.MemberRoster.Count != this.previous_party_count;
+        // Compare head counts, not the number of distinct troop types (gifting part of a stack changes only the former).
+        private bool ConditionToSayThankYou() => MobileParty.MainParty.MemberRoster.TotalManCount != this.previous_party_count;
 
         private void OpenTroopTransfer()
         {
-            this.previous_party_count = MobileParty.MainParty.MemberRoster.Count;
+            this.previous_party_count = MobileParty.MainParty.MemberRoster.TotalManCount;
             IRCompat.OpenScreenWithCondition(new IsTroopTransferableDelegate(this.IsTroopTransferable), new PartyPresentationDoneButtonConditionDelegate(this.DoneButtonCondition), new PartyPresentationDoneButtonDelegate(this.DoneClicked), new PartyPresentationCancelButtonDelegate(this.CancelClicked), PartyScreenLogic.TransferState.Transferable, PartyScreenLogic.TransferState.NotTransferable, Hero.OneToOneConversationHero.Name, 0, false, false, IRScreenMode.TroopsManage, null, null);
         }
 
@@ -82,7 +83,9 @@ namespace IndustrialRevolution.GiveTroops
             {
                 if (notableHero.HomeSettlement.MilitiaPartyComponent == null)
                 {
-                    MilitiaPartyComponent.CreateMilitiaParty("militias_of_" + notableHero.HomeSettlement.StringId + "_aaa1", notableHero.HomeSettlement);
+                    // Unique id: a fixed id could clash with a militia party created (and destroyed) earlier.
+                    string militiaId = "militias_of_" + notableHero.HomeSettlement.StringId + "_ir_" + Guid.NewGuid().ToString("N").Substring(0, 8);
+                    MilitiaPartyComponent.CreateMilitiaParty(militiaId, notableHero.HomeSettlement);
                 }
                 notableHero.HomeSettlement.MilitiaPartyComponent.Party.AddMembers(troopRoster);
             }
@@ -101,7 +104,12 @@ namespace IndustrialRevolution.GiveTroops
 
                 Hero.MainHero.Clan.AddRenown(renownGain);
 
-                InformationManager.DisplayMessage(new InformationMessage($"{notableHero.Name} gained {rewardScore} power, relation increased by {actualRelationGain}, your clan gained {renownGain:F1} renown, and the donated troops joined the militia."));
+                var giveMsg = new TextObject("{=IR_GIVE_TROOPS_MSG}{NAME} gained {POWER} power, relation increased by {RELATION}, your clan gained {RENOWN} renown, and the donated troops joined the militia.");
+                giveMsg.SetTextVariable("NAME", notableHero.Name);
+                giveMsg.SetTextVariable("POWER", rewardScore);
+                giveMsg.SetTextVariable("RELATION", actualRelationGain);
+                giveMsg.SetTextVariable("RENOWN", renownGain.ToString("F1"));
+                InformationManager.DisplayMessage(new InformationMessage(giveMsg.ToString()));
             }
 
             if (Campaign.Current.ConversationManager.IsConversationInProgress)

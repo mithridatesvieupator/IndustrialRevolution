@@ -114,15 +114,17 @@ namespace IndustrialRevolution.Economy
     [HarmonyPatch(typeof(DefaultTradeItemPriceFactorModel), "GetPrice")]
     public static class VillagePricePatch
     {
-        public static void Postfix(EquipmentElement itemRosterElement, MobileParty clientParty, ref int __result)
+        public static void Postfix(EquipmentElement itemRosterElement, MobileParty clientParty, PartyBase merchant, ref int __result)
         {
+            // Decide by where THIS trade happens (the merchant's settlement), not by where the player is standing:
+            // GetPrice also prices AI trades in towns all over the map.
             Settlement settlement = null;
 
-            if (Settlement.CurrentSettlement != null && Settlement.CurrentSettlement.IsVillage)
+            if (merchant != null && merchant.Settlement != null && merchant.Settlement.IsVillage)
             {
-                settlement = Settlement.CurrentSettlement;
+                settlement = merchant.Settlement;
             }
-            else if (clientParty != null && clientParty.CurrentSettlement != null && clientParty.CurrentSettlement.IsVillage)
+            else if (merchant == null && clientParty != null && clientParty.CurrentSettlement != null && clientParty.CurrentSettlement.IsVillage)
             {
                 settlement = clientParty.CurrentSettlement;
             }
@@ -238,6 +240,8 @@ namespace IndustrialRevolution.Economy
                 {
                     __result.Add(bonus, new TextObject("{=IR_MOD_NAME}Industrial Revolution", null), null);
                 }
+                // A low-prosperity penalty must never make the workshop run backwards.
+                __result.LimitMin(0f);
             }
         }
     }

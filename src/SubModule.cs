@@ -2,6 +2,7 @@
 using System.Reflection;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
+using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using HarmonyLib;
 
@@ -33,8 +34,15 @@ namespace IndustrialRevolution
                 {
                     harmony.Patch(methodInfo, null, new HarmonyMethod(methodInfo2), null, null);
                 }
+                else
+                {
+                    Debug.Print("[Industrial Revolution] Town food model method not found; the village food bonus is disabled.");
+                }
             }
-            catch { }
+            catch (Exception ex)
+            {
+                Debug.Print("[Industrial Revolution] Failed to patch the town food model; the village food bonus is disabled. " + ex);
+            }
         }
 
         protected override void OnGameStart(Game game, IGameStarter gameStarterObject)
