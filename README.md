@@ -87,6 +87,17 @@ Mods that alter economy or notable dialogue: **Banner Kings**, **Dramalord**, **
 
 ## Changelog
 
+### v1.2.0
+- Fixed: the gold reserve construction boost was applied three times and drained the reserve faster than shown. It now works as designed (20 gold per construction point), so boosted construction is slower than in earlier versions
+- Fixed: the village price premium for manufactured goods and draft animals applied to trades all over the map while you were standing in a village; it now applies only to trades in villages
+- Fixed: workshops in very low-prosperity towns could end up with negative production speed
+- Fixed: a looted village repaired itself while you merely stood in it; repairs now happen only while you choose "Help rebuild"
+- Fixed: gifting part of a troop stack to a notable answered "Very well" instead of "Thank you"
+- Fixed: gifting troops where a settlement had no militia could fail on a repeated militia party id
+- Donation input errors and the troop gift message are now translated in all supported languages
+- Errors while applying the town food bonus are now written to the game log instead of being silently ignored
+- Discard XP can no longer overflow to a negative value for very large stacks
+
 ### v1.1.3
 - Fixed: queueing or hovering a building project in a town or castle with an empty gold reserve crashed the game ("Attempted to divide by zero")
 

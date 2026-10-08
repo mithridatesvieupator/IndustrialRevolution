@@ -145,11 +145,11 @@ namespace IndustrialRevolution.Philanthropist
 
         private Tuple<bool, string> IsDonationTextValid(string text)
         {
-            if (string.IsNullOrEmpty(text)) return new Tuple<bool, string>(false, "Invalid amount.");
+            if (string.IsNullOrEmpty(text)) return new Tuple<bool, string>(false, new TextObject("{=IR_DONATE_ERR_INVALID}Invalid amount.").ToString());
             if (text.Trim().ToLower() == "max") return new Tuple<bool, string>(true, string.Empty);
-            if (!int.TryParse(text, out int donationAmount)) return new Tuple<bool, string>(false, "Please enter a valid number or 'max'.");
-            if (donationAmount <= 0) return new Tuple<bool, string>(false, "Donation must be greater than zero.");
-            if (donationAmount > Hero.MainHero.Gold) return new Tuple<bool, string>(false, "You do not have enough gold.");
+            if (!int.TryParse(text, out int donationAmount)) return new Tuple<bool, string>(false, new TextObject("{=IR_DONATE_ERR_NUMBER}Please enter a valid number or 'max'.").ToString());
+            if (donationAmount <= 0) return new Tuple<bool, string>(false, new TextObject("{=IR_DONATE_ERR_POSITIVE}Donation must be greater than zero.").ToString());
+            if (donationAmount > Hero.MainHero.Gold) return new Tuple<bool, string>(false, new TextObject("{=IR_DONATE_ERR_GOLD}You do not have enough gold.").ToString());
 
             Settlement settlement = Settlement.CurrentSettlement;
             float currentVal = settlement.IsVillage ? settlement.Village.Hearth : settlement.Town.Prosperity;
@@ -158,7 +158,12 @@ namespace IndustrialRevolution.Philanthropist
             float prosperityNeeded = maxVal - currentVal;
             int maxGoldAllowed = (int)(prosperityNeeded * this._settings.GoldToProsperityRatio);
 
-            if (donationAmount > maxGoldAllowed) return new Tuple<bool, string>(false, $"You can only donate up to {maxGoldAllowed} gold to reach the cap.");
+            if (donationAmount > maxGoldAllowed)
+            {
+                var capMsg = new TextObject("{=IR_DONATE_ERR_CAP}You can only donate up to {GOLD} gold to reach the cap.");
+                capMsg.SetTextVariable("GOLD", maxGoldAllowed);
+                return new Tuple<bool, string>(false, capMsg.ToString());
+            }
 
             return new Tuple<bool, string>(true, string.Empty);
         }
@@ -175,7 +180,9 @@ namespace IndustrialRevolution.Philanthropist
         private void OnHourlyTickSettlementEvent(Settlement settlement)
         {
             Settlement currentSettlement = Settlement.CurrentSettlement;
-            if (settlement == currentSettlement && settlement.IsRaided)
+            // Only while the player is actually in the "help rebuild" wait menu, not just standing in a looted village.
+            string menuId = Campaign.Current?.CurrentMenuContext?.GameMenu?.StringId;
+            if (settlement == currentSettlement && settlement.IsRaided && menuId == "rebuild_village")
             {
                 ExplainedNumber explainedNumber = new ExplainedNumber(0.02f + MobileParty.MainParty.Party.EstimatedStrength / 6000f, false, null);
                 IncreaseSettlementHealthAction.Apply(currentSettlement, explainedNumber.ResultNumber);

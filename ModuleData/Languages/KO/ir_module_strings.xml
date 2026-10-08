@@ -77,5 +77,12 @@
     <string id="IR_MCM_DISCARD_XP_ALL_HINT" text="기본 버리기 시스템을 대체합니다." />
     <string id="IR_MCM_DISCARD_GOLD_PER_XP_HINT" text="경험치 1당 필요한 아이템 기부 금 가치." />
     <string id="IR_MCM_DISCARD_PERKS_DOUBLE_HINT" text="이 특기를 보유하면 경험치가 2배가 됩니다." />
+
+    <string id="IR_DONATE_ERR_INVALID" text="잘못된 금액입니다." />
+    <string id="IR_DONATE_ERR_NUMBER" text="올바른 숫자 또는 'max'를 입력하세요." />
+    <string id="IR_DONATE_ERR_POSITIVE" text="기부액은 0보다 커야 합니다." />
+    <string id="IR_DONATE_ERR_GOLD" text="골드가 부족합니다." />
+    <string id="IR_DONATE_ERR_CAP" text="상한에 도달하려면 최대 {GOLD} 골드까지만 기부할 수 있습니다." />
+    <string id="IR_GIVE_TROOPS_MSG" text="{NAME}이(가) 권력 {POWER}을(를) 얻었고, 관계가 {RELATION} 증가했으며, 당신의 가문은 명성 {RENOWN}을(를) 얻었습니다. 기부된 병력은 민병대에 합류했습니다." />
   </strings>
 </base>

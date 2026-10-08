@@ -13,46 +13,13 @@ namespace IndustrialRevolution.Construction
 {
     public class ConstructionBoostBehavior : CampaignBehaviorBase
     {
-        public override void RegisterEvents()
-        {
-            CampaignEvents.DailyTickSettlementEvent.AddNonSerializedListener(this, new Action<Settlement>(this.OnDailyTickSettlement));
-        }
+        // The reserve boost is applied by the game itself: the base construction power adds GetBoostAmount and the
+        // daily building tick deducts GetBoostCost (both overridden below). This behaviour used to add the bonus to
+        // building progress a second time and charge the reserve extra; it now does nothing, and is kept registered
+        // only so existing saves that contain it load unchanged.
+        public override void RegisterEvents() { }
 
         public override void SyncData(IDataStore store) { }
-
-        private void OnDailyTickSettlement(Settlement settlement)
-        {
-            if (settlement != null && settlement.Town != null)
-            {
-                Town town = settlement.Town;
-                if (town.BoostBuildingProcess > 0)
-                {
-                    ConstructionBoostModel model = Campaign.Current.Models.BuildingConstructionModel as ConstructionBoostModel;
-                    if (model != null)
-                    {
-                        int bonus = model.GetBoostAmount(town);
-                        int burn = model.GetBoostCost(town) - (town.IsCastle ? 250 : 500);
-
-                        if (bonus > 0 && burn > 0)
-                        {
-                            if (town.BuildingsInProgress != null && town.BuildingsInProgress.Count > 0)
-                            {
-                                Building current = town.BuildingsInProgress.Peek();
-                                current.BuildingProgress += (float)bonus;
-                                town.BoostBuildingProcess -= burn;
-
-                                if (town.BoostBuildingProcess < 0)
-                                {
-                                    town.BoostBuildingProcess = 0;
-                                }
-
-                                BuildingHelper.CheckIfBuildingIsComplete(current);
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
 
     public class ConstructionBoostModel : DefaultBuildingConstructionModel
@@ -99,21 +66,6 @@ namespace IndustrialRevolution.Construction
         {
             this.CalculateCostAndBonus(town);
             return this._cachedCost;
-        }
-
-        public override ExplainedNumber CalculateDailyConstructionPower(Town town, bool includeDescriptions = false)
-        {
-            ExplainedNumber result = base.CalculateDailyConstructionPower(town, includeDescriptions);
-            this.CalculateCostAndBonus(town);
-
-            int bonus = this._cachedBonus;
-            int burn = this._cachedCost;
-
-            if (bonus > 0 && burn > 0 && town.BoostBuildingProcess > 0)
-            {
-                result.Add((float)bonus, new TextObject("{=IR_GOLD_RESERVE_BOOST}Gold Reserve Boost", null), null);
-            }
-            return result;
         }
 
         public override int CalculateDailyConstructionPowerWithoutBoost(Town town)

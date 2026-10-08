@@ -77,5 +77,12 @@
     <string id="IR_MCM_DISCARD_XP_ALL_HINT" text="覆盖原版丢弃系统。" />
     <string id="IR_MCM_DISCARD_GOLD_PER_XP_HINT" text="每1点经验所需的物品捐赠金币价值。" />
     <string id="IR_MCM_DISCARD_PERKS_DOUBLE_HINT" text="拥有这些特技可使经验值翻倍。" />
+
+    <string id="IR_DONATE_ERR_INVALID" text="金额无效。" />
+    <string id="IR_DONATE_ERR_NUMBER" text="请输入有效数字或“max”。" />
+    <string id="IR_DONATE_ERR_POSITIVE" text="捐款必须大于零。" />
+    <string id="IR_DONATE_ERR_GOLD" text="你的金币不足。" />
+    <string id="IR_DONATE_ERR_CAP" text="你最多只能捐赠 {GOLD} 金币以达到上限。" />
+    <string id="IR_GIVE_TROOPS_MSG" text="{NAME}获得了 {POWER} 点权势，关系提升了 {RELATION}，你的家族获得了 {RENOWN} 点声望，捐赠的部队已加入民兵。" />
   </strings>
 </base>

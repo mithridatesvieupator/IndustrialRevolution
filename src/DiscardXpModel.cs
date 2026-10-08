@@ -36,7 +36,8 @@ namespace IndustrialRevolution.Economy
                 xp *= (float)multiplier;
             }
 
-            return (int)Math.Max(0f, xp);
+            // Clamp before the cast: a huge stack of valuable items would otherwise overflow to a negative number.
+            return (int)Math.Min((double)int.MaxValue, Math.Max(0.0, (double)xp));
         }
     }
 }
