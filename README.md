@@ -66,7 +66,7 @@ Industrial Revolution   ← place near the bottom
 
 ## Compatibility
 
-**Built and tested on v1.3.x (current: 1.3.15).** Compatible with 1.2.x for most features. 1.4.x is untested; a rebuild against 1.4 DLLs will likely be required once that version stabilises in the mod community.
+**Built and tested on versions v1.3 up to v1.5.3. Compatibility version for 1.2.12 available for total conversion mods such as Shokuho.
 
 ### Likely Compatible
 Mods that do not alter core settlement logic, troop management, gold/trade, or loot-to-XP conversion — armories, cosmetic mods, UI overhauls, most total overhauls, and mods that edit characters, tournaments, or battle mechanics.
