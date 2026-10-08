@@ -29,7 +29,7 @@ namespace IndustrialRevolution.Philanthropist
             starter.AddGameMenuOption("castle", "settlement_donation", "{=IR_DONATE_CASTLE}Donate to castle", new GameMenuOption.OnConditionDelegate(this.settlement_donation_on_condition), new GameMenuOption.OnConsequenceDelegate(this.settlement_donation_on_consequence), false, -1, false, null);
 
             starter.AddGameMenuOption("village_looted", "rebuild_village", "{=IR_REBUILD_VILLAGE_OPTION}Help rebuild {VILLAGE_NAME}", new GameMenuOption.OnConditionDelegate(this.rebuild_village_on_condition), new GameMenuOption.OnConsequenceDelegate(this.rebuild_village_on_consequence), false, -1, false, null);
-            starter.AddWaitGameMenu("rebuild_village", "{=IR_REBUILD_WAIT_TEXT}You are helping to rebuild the village.", new OnInitDelegate(this.rebuild_village_on_init), new OnConditionDelegate(this.back_on_condition), new OnConsequenceDelegate(this.wait_menu_rebuild_village_on_consequence), new OnTickDelegate(this.wait_menu_rebuild_village_on_tick), GameMenu.MenuAndOptionType.WaitMenuShowOnlyProgressOption, GameMenu.MenuOverlayType.None, 0f, GameMenu.MenuFlags.None, null);
+            starter.AddWaitGameMenu("rebuild_village", "{=IR_REBUILD_WAIT_TEXT}You are helping to rebuild the village.", new OnInitDelegate(this.rebuild_village_on_init), new OnConditionDelegate(this.back_on_condition), new OnConsequenceDelegate(this.wait_menu_rebuild_village_on_consequence), new OnTickDelegate(this.wait_menu_rebuild_village_on_tick), GameMenu.MenuAndOptionType.WaitMenuShowOnlyProgressOption);
             starter.AddGameMenuOption("rebuild_village", "rebuild_village_end", "{=IR_END_REBUILDING}End Rebuilding", new GameMenuOption.OnConditionDelegate(this.leave_on_condition), new GameMenuOption.OnConsequenceDelegate(this.wait_menu_end_rebuilding_on_consequence), true, -1, false, null);
 
             // Financial Support Dialogue
@@ -184,7 +184,7 @@ namespace IndustrialRevolution.Philanthropist
             string menuId = Campaign.Current?.CurrentMenuContext?.GameMenu?.StringId;
             if (settlement == currentSettlement && settlement.IsRaided && menuId == "rebuild_village")
             {
-                ExplainedNumber explainedNumber = new ExplainedNumber(0.02f + MobileParty.MainParty.Party.EstimatedStrength / 6000f, false, null);
+                ExplainedNumber explainedNumber = new ExplainedNumber(0.02f + IRCompat.PartyStrength(MobileParty.MainParty.Party) / 6000f, false, null);
                 IncreaseSettlementHealthAction.Apply(currentSettlement, explainedNumber.ResultNumber);
             }
         }

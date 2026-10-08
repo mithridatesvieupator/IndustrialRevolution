@@ -98,6 +98,7 @@
     <Compile Include="ConstructionBoost.cs" />
     <Compile Include="DiscardXpModel.cs" />
     <Compile Include="Economy.cs" />
+    <Compile Include="GameCompat.cs" />
     <Compile Include="GiveTroops.cs" />
     <Compile Include="Philanthropist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

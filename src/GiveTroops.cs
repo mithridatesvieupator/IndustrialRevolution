@@ -49,7 +49,7 @@ namespace IndustrialRevolution.GiveTroops
         private void OpenTroopTransfer()
         {
             this.previous_party_count = MobileParty.MainParty.MemberRoster.TotalManCount;
-            PartyScreenHelper.OpenScreenWithCondition(new IsTroopTransferableDelegate(this.IsTroopTransferable), new PartyPresentationDoneButtonConditionDelegate(this.DoneButtonCondition), new PartyPresentationDoneButtonDelegate(this.DoneClicked), new PartyPresentationCancelButtonDelegate(this.CancelClicked), PartyScreenLogic.TransferState.Transferable, PartyScreenLogic.TransferState.NotTransferable, Hero.OneToOneConversationHero.Name, 0, false, false, PartyScreenHelper.PartyScreenMode.TroopsManage, null, null);
+            IRCompat.OpenScreenWithCondition(new IsTroopTransferableDelegate(this.IsTroopTransferable), new PartyPresentationDoneButtonConditionDelegate(this.DoneButtonCondition), new PartyPresentationDoneButtonDelegate(this.DoneClicked), new PartyPresentationCancelButtonDelegate(this.CancelClicked), PartyScreenLogic.TransferState.Transferable, PartyScreenLogic.TransferState.NotTransferable, Hero.OneToOneConversationHero.Name, 0, false, false, IRScreenMode.TroopsManage, null, null);
         }
 
         private bool IsTroopTransferable(CharacterObject character, PartyScreenLogic.TroopType type, PartyScreenLogic.PartyRosterSide side, PartyBase leftOwnerParty)
@@ -64,7 +64,7 @@ namespace IndustrialRevolution.GiveTroops
 
         private Tuple<bool, TextObject> DoneButtonCondition(TroopRoster leftMemberRoster, TroopRoster leftPrisonRoster, TroopRoster rightMemberRoster, TroopRoster rightPrisonRoster, int leftLimitNum, int rightLimitNum)
         {
-            return new Tuple<bool, TextObject>(true, TextObject.GetEmpty());
+            return new Tuple<bool, TextObject>(true, IRCompat.EmptyText);
         }
 
         private bool DoneClicked(TroopRoster leftMemberRoster, TroopRoster leftPrisonRoster, TroopRoster rightMemberRoster, TroopRoster rightPrisonRoster, FlattenedTroopRoster takenPrisonerRoster, FlattenedTroopRoster releasedPrisonerRoster, bool isForced, PartyBase leftParty, PartyBase rightParty)
